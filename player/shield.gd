@@ -13,6 +13,9 @@ func _ready() -> void:
 func start():
 	shield_sprite.modulate.a = 1.0
 	active = true
+	length_timer.start()
+	on_cd = true
 func stop():
 	shield_sprite.modulate.a = 0.5
 	active = false
+	reset_timer.start()

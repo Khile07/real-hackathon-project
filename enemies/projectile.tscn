@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://chpu7fcf0q4w"]
+
+[ext_resource type="Script" uid="uid://cf1vnvtkh35i6" path="res://enemies/projectile.gd" id="1_2ejsf"]
+[ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_1wnp2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 24.0
+
+[node name="projectile" type="CharacterBody2D" unique_id=628418543]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_2ejsf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1114493723]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=623878664]
+texture = ExtResource("2_1wnp2")

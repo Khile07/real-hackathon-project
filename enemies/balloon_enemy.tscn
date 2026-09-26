@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cr6ab512dq7oq"]
+
+[ext_resource type="Script" uid="uid://cdl62p1ia2xs5" path="res://enemies/balloon_enemy.gd" id="1_jmgo7"]
+[ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_o2hcb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 48.0
+
+[node name="balloon" type="CharacterBody2D" unique_id=722595064]
+script = ExtResource("1_jmgo7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=74825297]
+shape = SubResource("CircleShape2D_yf5fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=874069654]
+scale = Vector2(1.48, 1.48)
+texture = ExtResource("2_o2hcb")
+
+[node name="attack_timer" type="Timer" parent="." unique_id=1710555237]
+wait_time = 0.1

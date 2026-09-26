@@ -3,6 +3,21 @@
 [ext_resource type="Script" uid="uid://crs6yk82ejafs" path="res://enemies/tower_enemy.gd" id="1_yj1n7"]
 [ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_7mtco"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mtco"]
+atlas = ExtResource("2_7mtco")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yj1n7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mtco")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jxgq"]
 size = Vector2(64, 64)
 
@@ -45,10 +60,10 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_yj1n7")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=666776201]
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=244584912]
 modulate = Color(1, 0.39173245, 0.6076062, 1)
 position = Vector2(32, 32)
-texture = ExtResource("2_7mtco")
+sprite_frames = SubResource("SpriteFrames_yj1n7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343884453]
 visible = false
