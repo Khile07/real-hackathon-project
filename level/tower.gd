@@ -20,6 +20,7 @@ func is_move_valid(dir : Vector2i) -> bool:
 	return false
 		
 	
+	
 func create_tiles():
 	for cell in tile_layer.get_used_cells():
 		var tile : tile_resource = tile_resource.new()

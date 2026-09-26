@@ -43,10 +43,15 @@ func try_move_to_tile(dir : Vector2i):
 	
 func finish_anim(anim_name : String):
 	if anim_name in ["jump_up","jump_down","jump_left","jump_right"]:
-		position = stored_next_pixel_pos
-		tile_pos = stored_tile_pos
-		anim_player.play("idle")
+		move_to_stored()
 		print("finished prop", tile_pos)
+		
+func move_to_stored():
+	the_level.the_tower
+	position = stored_next_pixel_pos
+	tile_pos = stored_tile_pos
+	anim_player.play("idle")
+	
 	#else:
 		#stored_tile_pos = tile_pos
 		#stored_next_pixel_pos = position
