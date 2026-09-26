@@ -2,29 +2,53 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hnap"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 6
+border_color = Color(0.72156864, 0.73333335, 0.81960785, 1)
 corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
-shadow_color = Color(0, 0, 0, 0.54901963)
-shadow_size = 1
-shadow_offset = Vector2(-1, 5)
+corner_detail = 5
+shadow_color = Color(0.21179518, 0.18829608, 0.34896678, 1)
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnv02"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 4
+border_color = Color(0.78039217, 0.79607844, 0.8784314, 0.9019608)
 corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
-shadow_color = Color(0, 0, 0, 0.54901963)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 1
 shadow_offset = Vector2(-1, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaf01"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 12
+border_width_right = 14
+border_color = Color(0.018174412, 0.017159928, 0.0437835, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 5
+shadow_color = Color(0.052982464, 0.06385211, 0.118406944, 0.8745098)
+shadow_size = 6
+shadow_offset = Vector2(-1, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yl3sp"]
 bg_color = Color(0.16380861, 0.14342791, 0.27876958, 1)
 border_width_left = 4
 border_width_bottom = 8
-border_color = Color(0.3632529, 0.4100454, 0.68568885, 1)
+border_color = Color(0.023503022, 0.030865561, 0.0908541, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -36,4 +60,5 @@ expand_margin_bottom = 4.0
 [resource]
 Button/styles/hover = SubResource("StyleBoxFlat_8hnap")
 Button/styles/normal = SubResource("StyleBoxFlat_xnv02")
-Panel/styles/panel = SubResource("StyleBoxFlat_oaf01")
+Button/styles/pressed = SubResource("StyleBoxFlat_oaf01")
+Panel/styles/panel = SubResource("StyleBoxFlat_yl3sp")
