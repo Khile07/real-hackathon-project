@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="real_hackathon_project"
-run/main_scene="uid://b2tsoukkog167"
+run/main_scene="uid://wwv6bafy3vuq"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
