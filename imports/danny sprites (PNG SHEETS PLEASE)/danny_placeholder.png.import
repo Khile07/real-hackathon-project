@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyjha530nouvp"
-path="res://.godot/imported/sarah_placeholder.png-c407667a3738644e6e8cc6a773a034e1.ctex"
+uid="uid://c2gdxds1dathv"
+path="res://.godot/imported/danny_placeholder.png-e16aa8ab4b770520c1cc6295e85054e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sarah sprites (PNG SHEETS PLEASE)/sarah_placeholder.png"
-dest_files=["res://.godot/imported/sarah_placeholder.png-c407667a3738644e6e8cc6a773a034e1.ctex"]
+source_file="res://imports/danny sprites (PNG SHEETS PLEASE)/danny_placeholder.png"
+dest_files=["res://.godot/imported/danny_placeholder.png-e16aa8ab4b770520c1cc6295e85054e9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2gdxds1dathv"
-path="res://.godot/imported/danny_placeholder.png-4eb7de68af7fde7713e19210aff7fc32.ctex"
+uid="uid://cae0kro3xd1ix"
+path="res://.godot/imported/madi_placeholder.png-6bf9a3f5fa26d835351aa6b10de73f76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://danny sprites (PNG SHEETS PLEASE)/danny_placeholder.png"
-dest_files=["res://.godot/imported/danny_placeholder.png-4eb7de68af7fde7713e19210aff7fc32.ctex"]
+source_file="res://imports/import music (MADI ONLY)/madi_placeholder.png"
+dest_files=["res://.godot/imported/madi_placeholder.png-6bf9a3f5fa26d835351aa6b10de73f76.ctex"]
 
 [params]
 
