@@ -6,6 +6,40 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(64, 64)
 
+[sub_resource type="Animation" id="Animation_rkbax"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_yw30f"]
+resource_name = "jump_down"
+length = 0.16667083830051124
+step = 0.041666668
+
+[sub_resource type="Animation" id="Animation_qjkh3"]
+resource_name = "jump_left"
+length = 0.16667083830051124
+step = 0.041666668
+
+[sub_resource type="Animation" id="Animation_g6k8r"]
+resource_name = "jump_right"
+length = 0.16667083830051124
+step = 0.041666668
+
+[sub_resource type="Animation" id="Animation_g1dw6"]
+resource_name = "jump_up"
+length = 0.16667083830051124
+step = 0.041666668
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yw30f"]
+_data = {
+&"idle": SubResource("Animation_rkbax"),
+&"jump_down": SubResource("Animation_yw30f"),
+&"jump_left": SubResource("Animation_qjkh3"),
+&"jump_right": SubResource("Animation_g6k8r"),
+&"jump_up": SubResource("Animation_g1dw6")
+}
+
 [node name="player" type="CharacterBody2D" unique_id=2041007088]
 script = ExtResource("1_oul6g")
 
@@ -16,3 +50,8 @@ texture = ExtResource("2_rkbax")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=310465593]
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=1278759743]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1247292217]
+libraries/ = SubResource("AnimationLibrary_yw30f")
