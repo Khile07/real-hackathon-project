@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dquppdafdkibw"]
 
 [ext_resource type="Script" uid="uid://dspmmujgd8cfn" path="res://player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://bxwxifhralkqq" path="res://danny assets/spritesheets/player-Sheet.png" id="2_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://c1wtdbpj4326t" path="res://player/shield_holder.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://dgxgiomwygyhv" path="res://player/shield.gd" id="4_yw30f"]
@@ -53,7 +54,7 @@ script = ExtResource("1_oul6g")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=484225939]
 modulate = Color(0.43137255, 1, 1, 1)
 position = Vector2(32, 32)
-texture = ExtResource("2_rkbax")
+texture = ExtResource("2_qjkh3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=310465593]
 visible = false
