@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://wwv6bafy3vuq"]
+
+[ext_resource type="Texture2D" uid="uid://2ho44h5ukbxh" path="res://icon.svg" id="1_q1jyf"]
+[ext_resource type="Theme" uid="uid://bvhc62njxsxux" path="res://egg/Theme.tres" id="1_xnv02"]
+[ext_resource type="Script" uid="uid://d2160gfbsips3" path="res://egg/main_menu.gd" id="2_hwny1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g4v7s"]
+
+[node name="MainMenu" type="Control" unique_id=2063064166]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_xnv02")
+script = ExtResource("2_hwny1")
+
+[node name="BGLayer" type="CanvasLayer" parent="." unique_id=1120586816]
+
+[node name="Background" type="TextureRect" parent="BGLayer" unique_id=1954536478]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_g4v7s")
+
+[node name="MenuPanel" type="Panel" parent="." unique_id=1793815009]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = 152.0
+offset_right = 364.0
+offset_bottom = 632.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPanel" unique_id=230107057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel/MarginContainer" unique_id=1670959768]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer" unique_id=1340891613]
+custom_minimum_size = Vector2(255, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "THIS IS A GAME
+"
+icon = ExtResource("1_q1jyf")
+
+[node name="TextureRect" type="TextureRect" parent="MenuPanel/MarginContainer/VBoxContainer/Button3" unique_id=1887204297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_q1jyf")
+
+[node name="Button" type="Button" parent="MenuPanel/MarginContainer/VBoxContainer" unique_id=2108777177]
+custom_minimum_size = Vector2(255, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "QUIT"
+
+[node name="TextureRect" type="TextureRect" parent="MenuPanel/MarginContainer/VBoxContainer/Button" unique_id=1144838039]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_q1jyf")
