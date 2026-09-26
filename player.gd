@@ -44,6 +44,7 @@ func try_move_to_tile(dir : Vector2i):
 			anim_player.play("jump_up")
 	
 func finish_anim(anim_name : String):
+	print(anim_name)
 	if anim_name in ["jump_up","jump_down","jump_left","jump_right"]:
 		move_to_stored()
 		print("finished prop", tile_pos)
@@ -55,7 +56,7 @@ func move_to_stored():
 	anim_player.play("idle")
 
 func get_blocked_moves() ->Array[Vector2i]:
-	return [Vector2i(-1,0), Vector2i(1,0), Vector2i(0,1), Vector2i(0,-1)]
+	return [Vector2i(-1,0), Vector2i(1,0), Vector2i(0,1)]
 
 func pushed():
 	the_level.the_tower.tiles[tile_pos].occupient = null

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dspmmujgd8cfn" path="res://player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_rkbax"]
+[ext_resource type="Script" uid="uid://c1wtdbpj4326t" path="res://player/shield_holder.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://dgxgiomwygyhv" path="res://player/shield.gd" id="4_yw30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(64, 64)
@@ -13,7 +15,7 @@ step = 0.1
 
 [sub_resource type="Animation" id="Animation_yw30f"]
 resource_name = "jump_down"
-length = 0.16667083830051124
+length = 0.16666667
 step = 0.041666668
 
 [sub_resource type="Animation" id="Animation_qjkh3"]
@@ -40,6 +42,9 @@ _data = {
 &"jump_up": SubResource("Animation_g1dw6")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
+size = Vector2(64, 12)
+
 [node name="player" type="CharacterBody2D" unique_id=2041007088]
 collision_layer = 0
 collision_mask = 0
@@ -55,7 +60,29 @@ visible = false
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Timer" type="Timer" parent="." unique_id=1278759743]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1247292217]
 libraries/ = SubResource("AnimationLibrary_yw30f")
+
+[node name="shield_holder" type="Node2D" parent="." unique_id=1068300588]
+position = Vector2(32, 32)
+script = ExtResource("3_g1dw6")
+
+[node name="shield" type="Area2D" parent="shield_holder" unique_id=1304694238]
+position = Vector2(64, 0)
+rotation = 1.5707964
+script = ExtResource("4_yw30f")
+
+[node name="shield_sprite" type="Sprite2D" parent="shield_holder/shield" unique_id=1581406638]
+scale = Vector2(1, 0.2)
+texture = ExtResource("2_rkbax")
+
+[node name="length_timer" type="Timer" parent="shield_holder/shield" unique_id=2019677994]
+wait_time = 0.25
+one_shot = true
+
+[node name="reset_timer" type="Timer" parent="shield_holder/shield" unique_id=2047755755]
+wait_time = 0.5
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shield_holder/shield" unique_id=662742618]
+shape = SubResource("RectangleShape2D_yw30f")
