@@ -1,55 +1,19 @@
 extends Node2D
 class_name level
 
-@onready var tile_layer : TileMapLayer = $tiles
 @onready var player_scene : PackedScene = preload("uid://dquppdafdkibw")
+@onready var the_tower : tower = $tower
 
-var tiles : Dictionary[Vector2i, tile_resource]
-var furthest_x_tile = 1
-var highest_y_tile = 1
 var the_player : player
 
-
 func _ready() -> void:
-	create_tiles()
+	the_tower.create_tiles()
 	the_player = player_scene.instantiate()
+	the_player.tile_pos = Vector2i(8,10)
+	the_player.position = the_player.tile_pos * 64
+	the_player.the_level = self
 	add_child(the_player)
+	the_tower.the_player = the_player
 	#the_player.position = Vector2(200,200)
 	print(the_player)
-func create_tiles():
-	for cell in tile_layer.get_used_cells():
-		var tile : tile_resource = tile_resource.new()
-		tile.tile_type = 0
-		tile.occupied = false
-		tile.tile_position = cell
-		tiles[cell] = tile
-		if cell.y > highest_y_tile: highest_y_tile = cell.y
-		if cell.x > furthest_x_tile: furthest_x_tile = cell.x
-	furthest_x_tile += 1
-	highest_y_tile += 1
-	for i in range(0,highest_y_tile):
-		var tile_a : tile_resource = tile_resource.new()
-		tile_a.tile_type = 1
-		tile_a.occupied = false
-		tile_a.tile_position = Vector2i(-1,i)
-		
-		var tile_b : tile_resource = tile_resource.new()
-		tile_b.tile_type = 1
-		tile_b.occupied = false
-		tile_b.tile_position = Vector2i(furthest_x_tile,i)
-		
-		tiles[Vector2i(-1,i)] = tile_a
-		tiles[Vector2i(furthest_x_tile,i)] = tile_b
-	for i in range(0,furthest_x_tile):
-		var tile_a : tile_resource = tile_resource.new()
-		tile_a.tile_type = 1
-		tile_a.occupied = false
-		tile_a.tile_position = Vector2i(i,-1)
-		
-		var tile_b : tile_resource = tile_resource.new()
-		tile_b.tile_type = 1
-		tile_b.occupied = false
-		tile_b.tile_position = Vector2i(i,highest_y_tile )
-		
-		tiles[Vector2i(i,-1)] = tile_a
-		tiles[Vector2i(i,highest_y_tile )] = tile_b
+	
