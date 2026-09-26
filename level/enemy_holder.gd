@@ -1,11 +1,11 @@
 extends Node2D
 class_name enemy_holder
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var tower_peasant_scene : PackedScene = preload("uid://ix4fvtcg36jb")
+var the_level : level
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func set_up(level_node : level):
+	the_level = level_node
+	var peasant : tower_enemy = the_level.set_up_tower_entity(tower_peasant_scene,Vector2(8,9))
+	print(peasant.position)
+	

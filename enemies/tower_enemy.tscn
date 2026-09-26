@@ -1,6 +1,61 @@
 [gd_scene format=3 uid="uid://ix4fvtcg36jb"]
 
 [ext_resource type="Script" uid="uid://crs6yk82ejafs" path="res://enemies/tower_enemy.gd" id="1_yj1n7"]
+[ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_7mtco"]
 
-[node name="tower_enemy" type="CharacterBody2D" unique_id=1725091172]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jxgq"]
+size = Vector2(64, 64)
+
+[sub_resource type="Animation" id="Animation_rkbax"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_yw30f"]
+resource_name = "jump_down"
+length = 0.16667083830051124
+step = 0.041666668
+
+[sub_resource type="Animation" id="Animation_qjkh3"]
+resource_name = "jump_left"
+length = 0.16667083830051124
+step = 0.041666668
+
+[sub_resource type="Animation" id="Animation_g6k8r"]
+resource_name = "jump_right"
+length = 0.16667083830051124
+step = 0.041666668
+
+[sub_resource type="Animation" id="Animation_g1dw6"]
+resource_name = "jump_up"
+length = 0.16667083830051124
+step = 0.041666668
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tub0y"]
+_data = {
+&"idle": SubResource("Animation_rkbax"),
+&"jump_down": SubResource("Animation_yw30f"),
+&"jump_left": SubResource("Animation_qjkh3"),
+&"jump_right": SubResource("Animation_g6k8r"),
+&"jump_up": SubResource("Animation_g1dw6")
+}
+
+[node name="peasant" type="CharacterBody2D" unique_id=1725091172]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_yj1n7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=666776201]
+modulate = Color(1, 0.39173245, 0.6076062, 1)
+position = Vector2(32, 32)
+texture = ExtResource("2_7mtco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343884453]
+visible = false
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_7jxgq")
+
+[node name="Timer" type="Timer" parent="." unique_id=872757783]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=924703479]
+libraries/ = SubResource("AnimationLibrary_tub0y")
