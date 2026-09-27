@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://mjvjuo8vjcu4"]
 
 [ext_resource type="Script" uid="uid://k034dgelit36" path="res://egg/other_thing/end_screen.gd" id="1_hm4pt"]
-[ext_resource type="Texture2D" uid="uid://cyd8up6p3l481" path="res://egg/placeholder png.png" id="2_5syu6"]
+[ext_resource type="Texture2D" uid="uid://qsr8hab7h7vt" path="res://danny assets/spritesheets/gamejam_2026_title_full.png" id="2_0nqbk"]
 [ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="3_4ve3n"]
 [ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="4_qmi3s"]
 
 [sub_resource type="Gradient" id="Gradient_5p13v"]
 offsets = PackedFloat32Array(0, 0.49292454, 0.9834906)
-colors = PackedColorArray(0.061637312, 0.013967899, 0.092648976, 0.7647059, 0.48026556, 0.14219955, 0.0031676772, 0.83622825, 0.8194233, 0.4554507, 0.020390881, 0.9098039)
+colors = PackedColorArray(0.061637312, 0.013967899, 0.092648976, 0.7647059, 0.20366266, 0.18104753, 0.637105, 0.83622825, 0.6915873, 0.398519, 0.9215442, 0.9098039)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kff7d"]
 gradient = SubResource("Gradient_5p13v")
@@ -99,11 +99,17 @@ layer = -2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1082.0
+offset_top = 718.0
+offset_right = 1082.0
+offset_bottom = 718.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_5syu6")
+rotation = 3.1415927
+texture = ExtResource("2_0nqbk")
 
 [node name="GradientPlaceholder" type="TextureRect" parent="LoseBG" unique_id=1605170721]
+modulate = Color(1, 1, 1, 0.34509805)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -125,6 +131,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 312.0
+offset_top = 4.0
+offset_right = 312.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 340

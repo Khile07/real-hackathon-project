@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="5_8tp0j"]
 
 [sub_resource type="Gradient" id="Gradient_uqu0q"]
-colors = PackedColorArray(0.003921569, 0.003921569, 0.03529412, 0.7647059, 0.34117648, 0.34901962, 0.47843137, 0.9098039)
+colors = PackedColorArray(0.7526395, 0.6584345, 0.5463614, 0, 0.079149954, 0.08182765, 0.12947088, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b7i24"]
 gradient = SubResource("Gradient_uqu0q")
@@ -17,6 +17,8 @@ fill_to = Vector2(0.48976108, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_5p13v"]
 font = ExtResource("4_kaksp")
 font_size = 132
+outline_size = 24
+outline_color = Color(0.11372549, 0.09019608, 0.09019608, 1)
 
 [node name="MainMenu" type="Control" unique_id=2063064166]
 layout_mode = 3
@@ -36,6 +38,7 @@ grow_vertical = 2
 texture = ExtResource("3_uqu0q")
 
 [node name="GradientPlaceholder" type="TextureRect" parent="BGLayer" unique_id=753916074]
+modulate = Color(1, 1, 1, 0.4745098)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -44,9 +47,11 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_b7i24")
 
 [node name="TitlePlaceholder" type="Label" parent="BGLayer" unique_id=973464642]
-offset_right = 659.0
-offset_bottom = 79.0
-text = "[Crazy Game Title]"
+offset_left = 30.0
+offset_top = -2.0
+offset_right = 1004.0
+offset_bottom = 119.0
+text = "Tower of Tyranny"
 label_settings = SubResource("LabelSettings_5p13v")
 
 [node name="MenuPanel" type="Panel" parent="." unique_id=1793815009]

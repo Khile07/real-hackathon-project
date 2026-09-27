@@ -26,3 +26,4 @@ func _physics_process(delta: float) -> void:
 			if body is projectile and not body.can_kill_enemies:
 				body.reflected()
 				SfxScene.play_sfx(randi_range(7,8))
+				length_timer.set

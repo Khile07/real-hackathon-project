@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mbq6sfditicn"]
 
 [ext_resource type="Script" uid="uid://k034dgelit36" path="res://egg/other_thing/end_screen.gd" id="1_r3ha6"]
-[ext_resource type="Texture2D" uid="uid://cyd8up6p3l481" path="res://egg/placeholder png.png" id="2_jcksi"]
+[ext_resource type="Texture2D" uid="uid://qsr8hab7h7vt" path="res://danny assets/spritesheets/gamejam_2026_title_full.png" id="2_r3ha6"]
 [ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="3_gt3x8"]
 [ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="4_1wll3"]
 [ext_resource type="Theme" uid="uid://plrejvjmy6p5" path="res://win_theme.tres" id="5_t3ycj"]
@@ -203,9 +203,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jcksi")
+texture = ExtResource("2_r3ha6")
 
 [node name="GradientPlaceholder" type="TextureRect" parent="WinBG" unique_id=249367501]
+modulate = Color(1, 1, 1, 0.2509804)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -227,6 +228,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -309.0
+offset_right = -309.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 340

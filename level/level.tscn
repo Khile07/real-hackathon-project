@@ -79,7 +79,6 @@ tile_set = ExtResource("6_44x8d")
 
 [node name="PauseMenu" parent="." unique_id=2063064166 instance=ExtResource("7_ivpvi")]
 layer = 3
-visible = false
 
 [node name="Node" type="Node" parent="." unique_id=1223113429]
 
