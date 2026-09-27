@@ -17,6 +17,9 @@ func _ready() -> void:
 	SignalManager.pause_close.connect( func(): fade_in([0,1]))
 	SignalManager.wave_started.connect(func (): fade_in([0,1,2]))
 	SignalManager.wave_ended.connect(func (): fade_out([2]))
+	base.play()
+	plus_1.play()
+	plus_2.play()
 	
 	
 func fade_out(tracks : Array[int] = []):
