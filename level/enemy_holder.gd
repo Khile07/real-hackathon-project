@@ -5,6 +5,7 @@ class_name enemy_holder
 
 var tower_peasant_scene : PackedScene
 var proj_balloon_scene : PackedScene
+var goblim_tower_scene : PackedScene
 var the_level : level
 var stage_tokens_dict : Dictionary[int, float] = {
 	0 : 5,
@@ -19,13 +20,14 @@ var stage_tokens_dict : Dictionary[int, float] = {
 
 const enemy_cost : Dictionary[int, float] = {
 	0 : 2,
-	1 : 5
-	#2 : 8
+	1 : 5,
+	2 : 8
 }
 
 func set_up(level_node : level):
 	tower_peasant_scene = load("uid://ix4fvtcg36jb")
 	proj_balloon_scene = load("uid://cr6ab512dq7oq")
+	goblim_tower_scene = load("uid://cewkro6ate0c5")
 	the_level = level_node
 	enemy_check.timeout.connect(try_progress)
 	spawn_enemies(0)
@@ -66,7 +68,18 @@ func spawn_enemies(stage):
 			add_child(balloon)
 			balloon.position = Vector2(ranx,rany)
 			balloon.set_up(the_level)	
-			
+		if attempted_enemy == 2:
+			var no_tower_yet : bool = true
+			for child in the_level.get_children(): if child is goblim_tower: no_tower_yet = false
+			if not no_tower_yet:
+				stage_tokens_dict[stage] += enemy_cost[attempted_enemy]
+				continue
+			var ranx = [randi_range(-300,0), randi_range(1080,1380)][randi_range(0,1)]
+			var rany = randi_range(720 + stage * -768 + -128, stage * -768 + 300)
+			var balloon : goblim_tower = goblim_tower_scene.instantiate()
+			the_level.add_child(balloon)
+			balloon.position = Vector2(ranx,rany)
+			balloon.the_level = the_level
 			
 	
 	
