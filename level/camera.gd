@@ -24,11 +24,13 @@ func _physics_process(delta: float) -> void:
 	if ending_the_world:
 		the_level.fader.modulate.a += delta/2
 		if the_level.fader.modulate.a >= 1 and not won: 
-			get_tree().change_scene_to_file("uid://mbq6sfditicn")
 			SignalManager.player_dead.emit()
-		elif the_level.fader.modulate.a >= 1:
 			get_tree().change_scene_to_file("uid://mbq6sfditicn")
+			
+		elif the_level.fader.modulate.a >= 1:
 			SignalManager.player_won.emit()
+			get_tree().change_scene_to_file("uid://mbq6sfditicn")
+			
 			
 	if not follow: return
 	if position.y <= 360 and the_level.the_player.position.y < position.y: position.y = lerpf(position.y, the_level.the_player.position.y, delta * 4)
