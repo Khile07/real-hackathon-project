@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bvhc62njxsxux" path="res://egg/Theme.tres" id="1_uqu0q"]
 [ext_resource type="Script" uid="uid://d2160gfbsips3" path="res://egg/main_menu.gd" id="2_sr3kg"]
-[ext_resource type="Texture2D" uid="uid://cyd8up6p3l481" path="res://egg/placeholder png.png" id="3_okmw0"]
+[ext_resource type="Texture2D" uid="uid://qsr8hab7h7vt" path="res://danny assets/spritesheets/gamejam_2026_title_full.png" id="3_uqu0q"]
 [ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="4_kaksp"]
 [ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="5_8tp0j"]
 
@@ -33,7 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_okmw0")
+texture = ExtResource("3_uqu0q")
 
 [node name="GradientPlaceholder" type="TextureRect" parent="BGLayer" unique_id=753916074]
 anchors_preset = 15
