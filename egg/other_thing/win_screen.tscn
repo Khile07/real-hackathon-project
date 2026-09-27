@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://mbq6sfditicn"]
 
-[ext_resource type="Texture2D" uid="uid://cyd8up6p3l481" path="res://egg/placeholder png.png" id="1_7c7cl"]
-[ext_resource type="Script" uid="uid://k034dgelit36" path="res://egg/other_thing/end_screen.gd" id="1_vbsuj"]
-[ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="2_vbsuj"]
-[ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="3_2x6b8"]
-[ext_resource type="Theme" uid="uid://plrejvjmy6p5" path="res://win_theme.tres" id="5_2x6b8"]
+[ext_resource type="Script" uid="uid://k034dgelit36" path="res://egg/other_thing/end_screen.gd" id="1_r3ha6"]
+[ext_resource type="Texture2D" uid="uid://cyd8up6p3l481" path="res://egg/placeholder png.png" id="2_jcksi"]
+[ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="3_gt3x8"]
+[ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="4_1wll3"]
+[ext_resource type="Theme" uid="uid://plrejvjmy6p5" path="res://win_theme.tres" id="5_t3ycj"]
 
 [sub_resource type="Gradient" id="Gradient_5p13v"]
 offsets = PackedFloat32Array(0, 0.49292454, 0.9834906)
@@ -16,71 +16,8 @@ fill_from = Vector2(0.5238908, 0)
 fill_to = Vector2(0.48976108, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rwxr2"]
-font = ExtResource("2_vbsuj")
+font = ExtResource("3_gt3x8")
 font_size = 132
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cph4d"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 4
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 6
-border_color = Color(0.19107583, 0.0034201387, 3.6338718e-06, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-corner_detail = 5
-shadow_color = Color(0.35436472, 0.025194662, 0.06847834, 1)
-shadow_size = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayi1v"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 4
-border_color = Color(0.14551288, 0.013874645, 0.008288311, 0.9019608)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-shadow_color = Color(0, 0, 0, 0)
-shadow_size = 1
-shadow_offset = Vector2(-1, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma7ur"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_top = 12
-border_width_right = 14
-border_color = Color(0.061732247, 0.0040480043, 0.0031378919, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-corner_detail = 5
-shadow_color = Color(0.14494303, 0.021350386, 0.0032987853, 0.8745098)
-shadow_size = 6
-shadow_offset = Vector2(-1, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5v88"]
-bg_color = Color(0.25366282, 0.011316857, 0.099328734, 1)
-border_width_left = 4
-border_width_bottom = 8
-border_color = Color(0.18847942, 0.08192364, 0.07084454, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-corner_detail = 20
-expand_margin_top = 4.0
-expand_margin_bottom = 4.0
-
-[sub_resource type="Theme" id="Theme_wrctt"]
-Button/styles/hover = SubResource("StyleBoxFlat_cph4d")
-Button/styles/normal = SubResource("StyleBoxFlat_ayi1v")
-Button/styles/pressed = SubResource("StyleBoxFlat_ma7ur")
-Panel/styles/panel = SubResource("StyleBoxFlat_l5v88")
 
 [sub_resource type="Animation" id="Animation_jc4be"]
 length = 0.001
@@ -244,57 +181,29 @@ _data = {
 &"win_button": SubResource("Animation_0e87h")
 }
 
-[node name="EndScreen" type="Control" unique_id=1466600029]
-visible = false
+[node name="win_screen" type="Control" unique_id=1466600029 node_paths=PackedStringArray("anim_player", "anim_player2", "play_button", "exit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vbsuj")
-
-[node name="LoseBG" type="CanvasLayer" parent="." unique_id=1878721515]
-layer = -2
-
-[node name="Background" type="TextureRect" parent="LoseBG" unique_id=141010866]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_7c7cl")
-
-[node name="GradientPlaceholder" type="TextureRect" parent="LoseBG" unique_id=1605170721]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_kff7d")
-
-[node name="TitlePlaceholder" type="Label" parent="LoseBG" unique_id=68226383]
-offset_left = 2.0
-offset_top = 55.0
-offset_right = 1080.0
-offset_bottom = 176.0
-text = "Game Over"
-label_settings = SubResource("LabelSettings_rwxr2")
-horizontal_alignment = 1
+script = ExtResource("1_r3ha6")
+anim_player = NodePath("MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton/AnimationPlayer2")
+anim_player2 = NodePath("MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton/AnimationPlayer2")
+play_button = NodePath("MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton")
+exit_button = NodePath("MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton")
 
 [node name="WinBG" type="CanvasLayer" parent="." unique_id=248036250]
 layer = -2
-visible = false
 
 [node name="Background" type="TextureRect" parent="WinBG" unique_id=982276512]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7c7cl")
+texture = ExtResource("2_jcksi")
 
 [node name="GradientPlaceholder" type="TextureRect" parent="WinBG" unique_id=249367501]
 anchors_preset = 15
@@ -325,40 +234,9 @@ theme_override_constants/margin_top = 200
 theme_override_constants/margin_right = 340
 theme_override_constants/margin_bottom = 37
 
-[node name="LoseButtons" type="Panel" parent="MarginContainer" unique_id=1985536101]
-layout_mode = 2
-theme = SubResource("Theme_wrctt")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/LoseButtons" unique_id=1394311303]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/LoseButtons/MarginContainer" unique_id=29794041]
-layout_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="PlayButton" parent="MarginContainer/LoseButtons/MarginContainer/VBoxContainer" unique_id=940846161 instance=ExtResource("3_2x6b8")]
-layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "RESTART
-"
-
-[node name="ExitButton" parent="MarginContainer/LoseButtons/MarginContainer/VBoxContainer" unique_id=637047789 instance=ExtResource("3_2x6b8")]
-layout_mode = 2
-text = "EXIT"
-
 [node name="WinButtons" type="Panel" parent="MarginContainer" unique_id=73393461]
-visible = false
 layout_mode = 2
-theme = ExtResource("5_2x6b8")
+theme = ExtResource("5_t3ycj")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/WinButtons" unique_id=879323388]
 layout_mode = 1
@@ -376,9 +254,9 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayButton" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer" unique_id=1593202046 instance=ExtResource("3_2x6b8")]
+[node name="PlayButton" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer" unique_id=1593202046 instance=ExtResource("4_1wll3")]
 layout_mode = 2
-theme = ExtResource("5_2x6b8")
+theme = ExtResource("5_t3ycj")
 theme_override_font_sizes/font_size = 66
 text = "RESTART
 "
@@ -386,16 +264,14 @@ text = "RESTART
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton" unique_id=1504952186]
 libraries/ = SubResource("AnimationLibrary_vbsuj")
 
-[node name="ExitButton" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer" unique_id=925928080 instance=ExtResource("3_2x6b8")]
+[node name="ExitButton" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer" unique_id=925928080 instance=ExtResource("4_1wll3")]
 layout_mode = 2
-theme = ExtResource("5_2x6b8")
+theme = ExtResource("5_t3ycj")
 text = "EXIT"
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton" unique_id=1820971276]
 libraries/ = SubResource("AnimationLibrary_vbsuj")
 
-[connection signal="pressed" from="MarginContainer/LoseButtons/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MarginContainer/LoseButtons/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton" to="MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton/AnimationPlayer2" method="play" binds= ["win_button"]]
 [connection signal="pressed" from="MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -26,10 +26,10 @@ func _physics_process(delta: float) -> void:
 		the_level.fader.modulate.a += delta/2
 		if the_level.fader.modulate.a >= 1 and not won and not stop: 
 			stop = true
-			SignalManager.player_dead.emit()
-			get_tree().change_scene_to_file("uid://mbq6sfditicn")
+			get_tree().change_scene_to_file("uid://mjvjuo8vjcu4")
 			
-		elif the_level.fader.modulate.a >= 1:
+		elif the_level.fader.modulate.a >= 1 and not stop:
+			stop = true
 			SignalManager.player_won.emit()
 			get_tree().change_scene_to_file("uid://mbq6sfditicn")
 			

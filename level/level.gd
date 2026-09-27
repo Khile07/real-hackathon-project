@@ -5,7 +5,7 @@ class_name level
 @onready var the_tower : tower = $tower
 @onready var the_camera : custom_cam = $camera
 @onready var the_enemy_holder : enemy_holder = $enemy_holder
-@onready var fader : ColorRect = $CanvasLayer/fader
+@onready var fader : ColorRect = $camera/fader
 var the_player : player
 
 var current_stage = 0
