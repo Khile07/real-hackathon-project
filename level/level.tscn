@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dj5v2srjbxv37" path="res://level/camera.tscn" id="5_ktfr2"]
 [ext_resource type="TileSet" uid="uid://cujocsf6jf67c" path="res://level/bg.tres" id="6_44x8d"]
 [ext_resource type="PackedScene" uid="uid://ywwdm5c3pym0" path="res://egg/pause_menu.tscn" id="7_ivpvi"]
+[ext_resource type="Texture2D" uid="uid://vcapm0sdg8tt" path="res://w_icon.png" id="8_0v1st"]
+[ext_resource type="Texture2D" uid="uid://yktql6n3va4n" path="res://lmb_icon.png" id="9_l5lfc"]
+[ext_resource type="Texture2D" uid="uid://cjgbuu85tk15i" path="res://s_icon.png" id="9_xii2b"]
+[ext_resource type="Texture2D" uid="uid://dhgivt4e5y83q" path="res://A_Icon.png" id="10_rhqlf"]
+[ext_resource type="Texture2D" uid="uid://bxsm3xwp7p534" path="res://D_icon.png" id="11_l5lfc"]
+[ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="13_m3nah"]
 
 [node name="level" type="Node2D" unique_id=2061506222]
 script = ExtResource("1_5gx2l")
@@ -45,7 +51,6 @@ tile_set = ExtResource("6_44x8d")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=518870483]
 process_mode = 3
 layer = 70
-visible = false
 follow_viewport_enabled = true
 
 [node name="fader" type="ColorRect" parent="CanvasLayer" unique_id=1515019095]
@@ -57,3 +62,48 @@ color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" parent="." unique_id=2063064166 instance=ExtResource("7_ivpvi")]
 layer = 3
+
+[node name="Node" type="Node" parent="." unique_id=1223113429]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node" unique_id=78807956]
+position = Vector2(181, 563)
+scale = Vector2(2, 2)
+texture = ExtResource("8_0v1st")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node" unique_id=1787898124]
+position = Vector2(881, 633)
+scale = Vector2(2, 2)
+texture = ExtResource("9_l5lfc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node" unique_id=1869676528]
+position = Vector2(183, 633)
+scale = Vector2(2, 2)
+texture = ExtResource("9_xii2b")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node" unique_id=1421593903]
+position = Vector2(115, 629)
+scale = Vector2(2, 2)
+texture = ExtResource("10_rhqlf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node" unique_id=1518680090]
+position = Vector2(251, 633)
+scale = Vector2(2, 2)
+texture = ExtResource("11_l5lfc")
+
+[node name="Label" type="Label" parent="Node" unique_id=1227507964]
+offset_left = 120.0
+offset_top = 655.0
+offset_right = 248.0
+offset_bottom = 714.0
+theme_override_fonts/font = ExtResource("13_m3nah")
+theme_override_font_sizes/font_size = 64
+text = "MOVE"
+
+[node name="Label2" type="Label" parent="Node" unique_id=2047866286]
+offset_left = 815.0
+offset_top = 654.0
+offset_right = 943.0
+offset_bottom = 713.0
+theme_override_fonts/font = ExtResource("13_m3nah")
+theme_override_font_sizes/font_size = 64
+text = "Parry"

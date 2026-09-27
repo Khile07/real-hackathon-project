@@ -38,8 +38,11 @@ func try_progress():
 			if the_level.the_player.position.distance_to(child.position) > 2000: child.queue_free()
 	if get_child_count() > 1 or the_level.the_camera.follow: return
 	else:
-		if the_level.current_stage == 7:
+		if the_level.current_stage == 1:
+			the_level.fader.visible = true
+			the_level.the_camera.won = true
 			the_level.the_camera.ending_the_world = true
+			return
 		the_level.the_camera.follow = true
 		SignalManager.wave_ended.emit()
 		the_level.current_stage += 1

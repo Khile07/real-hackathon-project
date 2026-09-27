@@ -45,7 +45,7 @@ func try_attack():
 	proj.global_position = global_position
 	if randf() > 0.5:
 		proj.move_type = 1
-		proj.speed *= 1.5
+		proj.speed *= 0.6
 	SignalManager.sfx_request.emit(0)
 	proj.start(the_level.the_player, self)
 	

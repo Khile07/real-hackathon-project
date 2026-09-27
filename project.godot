@@ -22,9 +22,9 @@ buses/default_bus_layout="uid://fk3snwau8u1k"
 [autoload]
 
 SignalManager="*uid://cexic3b83e6t8"
-AudioGlobal="*uid://b4p62b2reajb3"
 MusicManager="*uid://bvjhiayhw2eff"
 SfxScene="*uid://c7mcw2y10wjfv"
+EndScreen="*uid://mbq6sfditicn"
 
 [display]
 

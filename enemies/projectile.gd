@@ -4,7 +4,7 @@ class_name projectile
 var sprite_rot_speed = 0
 var move_type : int = 0 # 0 is straight line, 1 is affected by gravity
 var gravity : float = 1200
-var speed : float = 320
+var speed : float = 500
 var direction : Vector2 = Vector2.UP
 var started : bool = false
 var source : Node2D # THIS IS THE OG ENEMY
