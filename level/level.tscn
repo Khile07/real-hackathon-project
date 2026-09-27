@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dhgivt4e5y83q" path="res://A_Icon.png" id="10_rhqlf"]
 [ext_resource type="Texture2D" uid="uid://bxsm3xwp7p534" path="res://D_icon.png" id="11_l5lfc"]
 [ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="13_m3nah"]
+[ext_resource type="Texture2D" uid="uid://g8quahnc5t47" path="res://danny assets/spritesheets/clouds.png" id="14_m3nah"]
+[ext_resource type="Script" uid="uid://bxyihsreklqxr" path="res://level/clouds.gd" id="15_fm1jd"]
 
 [sub_resource type="Gradient" id="Gradient_l5lfc"]
 offsets = PackedFloat32Array(0, 0.04255319, 0.2618658, 0.5335516, 0.63666123, 0.9525368, 0.9983633)
@@ -20,6 +22,17 @@ colors = PackedColorArray(0, 0, 0, 0.654902, 0.03818085, 0.05576262, 0.17489964,
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_g4v7s"]
 gradient = SubResource("Gradient_l5lfc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm1jd"]
+texture = ExtResource("14_m3nah")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_fm1jd")
 
 [node name="level" type="Node2D" unique_id=2061506222]
 script = ExtResource("1_5gx2l")
@@ -117,3 +130,9 @@ text = "Parry"
 position = Vector2(513, -792.4999)
 scale = Vector2(4.0312495, 48.79688)
 texture = SubResource("GradientTexture2D_g4v7s")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=2097117896]
+z_index = -2
+tile_map_data = PackedByteArray("AAAAAPv/AAACAAAAAAAAAP7/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAABAPb/AAABAAAAAAABAAMAAAACAAAAAAABAAUAAAAAAAAAAAACAPv/AAACAAAAAAACAP3/AAACAAAAAAACAAQAAAAAAAAAAAADAPf/AAAAAAAAAAADAP3/AAABAAAAAAADAAAAAAACAAAAAAAEAPb/AAABAAAAAAAEAP//AAABAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAQAAAACAAAAAAAHAPf/AAAAAAAAAAAHAPj/AAAAAAAAAAAHAPr/AAACAAAAAAAHAP//AAABAAAAAAAFAAMAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
+script = ExtResource("15_fm1jd")
