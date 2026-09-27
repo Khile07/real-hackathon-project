@@ -16,5 +16,11 @@ signal menu_button_pressed()
 signal pause_open
 signal pause_close
 
+## Signal for Player Death
+signal player_dead
+
+## Signal for Player Win
+signal player_won
+
 # Highkey, I'm only making this so that the audio tracks are easy to work out.... hopefully.
 signal sfx_request(sfx_int)
