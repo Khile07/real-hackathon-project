@@ -53,7 +53,7 @@ func spawn_enemies(stage):
 					break
 		if attempted_enemy == 1:
 			var ranx = [randi_range(0,300), randi_range(780,1080)][randi_range(0,1)]
-			var rany = randi_range(the_level.the_tower.highest_y_tile * -64 + stage * 12 * -64 + -128, the_level.the_tower.highest_y_tile * -64 + (stage+1) * 12 * -64 + 128)
+			var rany = randi_range(720 + stage * -768 + -128, stage * -768)
 			var balloon : balloon_enemy = proj_balloon_scene.instantiate()
 			add_child(balloon)
 			balloon.position = Vector2(ranx,rany)
