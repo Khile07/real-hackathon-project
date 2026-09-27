@@ -106,6 +106,8 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="MenuPanel/MarginContainer" unique_id=146185805]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9254902, 0.9411765, 0.99215686, 1)
+theme_override_colors/font_pressed_color = Color(0.27058825, 0.28235295, 0.46666667, 1)
 text = "❚❚"
 
 [node name="BGLayer" type="CanvasLayer" parent="." unique_id=1031165409]
