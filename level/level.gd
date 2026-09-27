@@ -5,6 +5,7 @@ class_name level
 @onready var the_tower : tower = $tower
 @onready var the_camera : custom_cam = $camera
 @onready var the_enemy_holder : enemy_holder = $enemy_holder
+@onready var fader : ColorRect = $CanvasLayer/fader
 var the_player : player
 
 var current_stage = 0
@@ -15,8 +16,6 @@ func _ready() -> void:
 	the_camera.set_up(self)
 	the_player = set_up_tower_entity(player_scene, Vector2i(8,10), true)
 	the_tower.the_player = the_player
-	#the_player.position = Vector2(200,200)
-	print(the_player)
 	
 	
 func set_up_tower_entity(entity_scene : PackedScene, pos : Vector2i, is_player : bool = false) -> player:

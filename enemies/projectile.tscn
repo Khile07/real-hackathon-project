@@ -4,15 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_1wnp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 24.0
+radius = 14.5
 
 [node name="projectile" type="CharacterBody2D" unique_id=628418543]
-collision_layer = 0
+collision_layer = 6
 collision_mask = 0
 script = ExtResource("1_2ejsf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1114493723]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1021620134]
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=623878664]
 texture = ExtResource("2_1wnp2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=156887770]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1114493723]
+shape = SubResource("CircleShape2D_g4v7s")

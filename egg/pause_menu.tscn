@@ -113,7 +113,7 @@ text = "❚❚"
 [node name="BGLayer" type="CanvasLayer" parent="." unique_id=1031165409]
 process_mode = 4
 physics_interpolation_mode = 2
-layer = -15
+layer = 0
 visible = false
 follow_viewport_enabled = true
 

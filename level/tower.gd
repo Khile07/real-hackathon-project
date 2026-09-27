@@ -19,11 +19,12 @@ func set_up(level_node : level):
 
 func is_move_valid(entity : player, dir : Vector2i) -> bool:
 	var pos : Vector2i = entity.tile_pos + dir
+	if pos.y <= highest_y_tile - 12*(the_level.current_stage + 1): return false
+
 	if pos in tiles and tiles[pos].tile_type == 0 and tiles[pos].occupient == null:
 		return true
 	elif pos in tiles and tiles[pos].tile_type == 0 and tiles[pos].occupient is player and not dir in tiles[pos].occupient.get_blocked_moves():
 		return true
-	print(pos in tiles, tiles[pos].tile_type == 0, tiles[pos].occupient == null)
 	return false
 		
 func set_stage_blocks():pass
@@ -48,7 +49,6 @@ func create_tiles():
 	furthest_x_tile += 1
 	highest_y_tile += 1
 	lowest_y_tile -=1
-	print("HIGH", highest_y_tile)
 	for i in range(lowest_y_tile,highest_y_tile):
 		var tile_a : tile_resource = tile_resource.new()
 		tile_a.tile_type = 1
@@ -75,4 +75,4 @@ func create_tiles():
 		
 		tiles[Vector2i(i,lowest_y_tile)] = tile_a
 		tiles[Vector2i(i,highest_y_tile )] = tile_b
-	print(min_x, "MIN X")
+	

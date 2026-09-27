@@ -6,12 +6,11 @@ const movement_actions : Dictionary[String, Vector2i] = {
 	"left" : Vector2i(-1,0),
 	"right" : Vector2i(1,0),
 	"down" : Vector2i(0,1),
-	"up" : Vector2i(0,-1)
-	
+	"up" : Vector2i(0,-1)	
 }
 @onready var sprite : AnimatedSprite2D = $sprite
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
-
+@export var yeah_im_THE_player_buddy : bool
 var stored_next_pixel_pos : Vector2 
 var stored_tile_pos : Vector2i
 var the_level : level
@@ -62,7 +61,9 @@ func pushed():
 	the_level.the_tower.tiles[tile_pos].occupient = null
 	dead = true
 	anim_player.stop()
-	
+	if yeah_im_THE_player_buddy:
+		the_level.the_camera.ending_the_world = true
+		the_level.fader.visible = true
 func _physics_process(delta: float) -> void:
 	if not dead: return
 	velocity = Vector2(0,640)

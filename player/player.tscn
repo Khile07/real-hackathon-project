@@ -270,6 +270,7 @@ size = Vector2(64, 12)
 [node name="player" type="CharacterBody2D" unique_id=2041007088]
 collision_mask = 0
 script = ExtResource("1_oul6g")
+yeah_im_THE_player_buddy = true
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1187664731]
 position = Vector2(32, 32)
@@ -291,6 +292,8 @@ script = ExtResource("3_g1dw6")
 [node name="shield" type="Area2D" parent="shield_holder" unique_id=1304694238]
 position = Vector2(64, 0)
 rotation = 1.5707964
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("4_yw30f")
 
 [node name="shield_sprite" type="Sprite2D" parent="shield_holder/shield" unique_id=1581406638]

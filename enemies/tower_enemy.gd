@@ -15,7 +15,6 @@ func _ready() -> void:
 	super()
 
 func try_move_up():
-	print(tile_pos)
 	if randf() > 0.5 or dead: return
 	if the_level.the_tower.is_move_valid(self, Vector2i(0,-1)):
 		try_move_to_tile(Vector2i(0,-1))

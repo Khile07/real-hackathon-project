@@ -22,6 +22,10 @@ func set_up(L : level) -> void:
 	anim_player.animation_finished.connect(func(_n): anim_player.play("idle"))
 
 func _physics_process(delta: float) -> void:
+	if dying: 
+		rotation_degrees += delta * 360
+		move_and_slide()
+		return
 	velocity.y = sin(floater) *128
 	floater += delta 
 	if floater > PI * 2: floater = 0
@@ -33,20 +37,23 @@ func try_attack():
 	if randf() >0.6: return
 	anim_player.play("attack")
 	var proj : projectile = projectile_scene.instantiate()
+	proj.global_position = global_position
 	the_level.add_child(proj)
-	proj.position = position
+	proj.global_position = global_position
 	if randf() > 0.5:
 		proj.move_type = 1
-		proj.speed *= 2.5
+		proj.speed *= 1.5
 	proj.start(the_level.the_player, self)
 	
 func die_start():
 	anim_player.play("death")
 	dying = true
+	print("DYINGG")
 	
 func fall():
 	anim_player.play("falling")
 	falling = true
 	velocity = Vector2(0,400)
+	print("FALLOING")
 	
 	
