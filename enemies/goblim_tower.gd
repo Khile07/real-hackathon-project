@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.length() > max_speed: velocity.normalized() * max_speed/2
 		position += velocity
 	else:
-		velocity = velocity.normalized() * max_speed
+		velocity = velocity.normalized() * (max_speed * 2)
 		position += velocity
 	 
 		
