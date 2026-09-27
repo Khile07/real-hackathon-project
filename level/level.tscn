@@ -30,6 +30,7 @@ autostart = true
 
 [node name="camera" parent="." unique_id=1816334831 instance=ExtResource("5_ktfr2")]
 position = Vector2(540, 360)
+zoom = Vector2(0.2, 0.2)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=893813122]
 z_index = -5

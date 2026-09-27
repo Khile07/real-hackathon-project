@@ -11,6 +11,7 @@ var music_bus = AudioServer.get_bus_index("Music")
 var sfx_bus = AudioServer.get_bus_index("SFX")
 
 func _ready() -> void:
+	return
 	wave_audio_tracks.set_sync_stream_volume(0, -60)
 	wave_audio_tracks.set_sync_stream_volume(1, -60)
 	wave_audio_tracks.set_sync_stream_volume(2, -60)

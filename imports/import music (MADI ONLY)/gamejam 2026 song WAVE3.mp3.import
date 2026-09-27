@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqdffbatqmbk"
+path="res://.godot/imported/gamejam 2026 song WAVE3.mp3-e8d61f414a90a835c65b00e76764778f.mp3str"
+
+[deps]
+
+source_file="res://imports/import music (MADI ONLY)/gamejam 2026 song WAVE3.mp3"
+dest_files=["res://.godot/imported/gamejam 2026 song WAVE3.mp3-e8d61f414a90a835c65b00e76764778f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

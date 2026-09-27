@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5lust3urt0i2"
+path="res://.godot/imported/gamejam 2026 VICTORY.mp3-85a60247e6a6cbadeb95dfa5d1f22b6c.mp3str"
+
+[deps]
+
+source_file="res://imports/import music (MADI ONLY)/gamejam 2026 VICTORY.mp3"
+dest_files=["res://.godot/imported/gamejam 2026 VICTORY.mp3-85a60247e6a6cbadeb95dfa5d1f22b6c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

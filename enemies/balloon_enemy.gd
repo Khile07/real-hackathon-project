@@ -10,7 +10,9 @@ var attack_timer : Timer
 var anim_player : AnimationPlayer
 var dying : bool = false
 var falling : bool = false
+var ideal_x : float = 0
 func set_up(L : level) -> void:
+	ideal_x = [randi_range(0,330), randf_range(668,1000)][randi_range(0,1)]
 	anim_player = $AnimationPlayer
 	projectile_scene = load("uid://chpu7fcf0q4w")
 	attack_timer = $attack_timer
@@ -25,7 +27,9 @@ func _physics_process(delta: float) -> void:
 	if dying: 
 		move_and_slide()
 		return
-	velocity.y = sin(floater) *128
+	if position.x - ideal_x < -16: velocity.x = 48
+	if position.x - ideal_x > 16: velocity.x =-48
+	velocity.y = sin(floater) *32
 	floater += delta 
 	if floater > PI * 2: floater = 0
 	move_and_slide()

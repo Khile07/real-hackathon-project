@@ -34,8 +34,9 @@ func try_progress():
 	if get_child_count() > 1 or the_level.the_camera.follow: return
 	else:
 		the_level.the_camera.follow = true
+		SignalManager.wave_ended.emit()
 		the_level.current_stage += 1
-		spawn_enemies(the_level.current_stage)
+		
 	
 func spawn_enemies(stage):
 	while stage_tokens_dict[stage] > 1:
@@ -46,14 +47,16 @@ func spawn_enemies(stage):
 			var attempt_count : int= 0
 			while(attempt_count < 5):
 				attempt_count += 1
-				var y = randi_range(the_level.the_tower.highest_y_tile + (stage * -12), the_level.the_tower.highest_y_tile + stage * -12 -10)
+				var y : int
+				if the_level.current_stage == 0: y = randi_range(the_level.the_tower.highest_y_tile + (stage * -12), the_level.the_tower.highest_y_tile + stage * -12 -10)
+				else: y = randi_range(the_level.the_tower.highest_y_tile + ((stage-1) * -12), the_level.the_tower.highest_y_tile + (stage-1) * -12 -10)
 				var x = randi_range(the_level.the_tower.min_x, the_level.the_tower.min_x + 3)
 				if Vector2i(x,y) in the_level.the_tower.tiles and the_level.the_tower.tiles[Vector2i(x,y)].occupient == null:
 					the_level.set_up_tower_entity(tower_peasant_scene,Vector2(x,y))
 					break
 		if attempted_enemy == 1:
-			var ranx = [randi_range(0,300), randi_range(780,1080)][randi_range(0,1)]
-			var rany = randi_range(720 + stage * -768 + -128, stage * -768)
+			var ranx = [randi_range(-300,0), randi_range(1080,1380)][randi_range(0,1)]
+			var rany = randi_range(720 + stage * -768 + -128, stage * -768 + 300)
 			var balloon : balloon_enemy = proj_balloon_scene.instantiate()
 			add_child(balloon)
 			balloon.position = Vector2(ranx,rany)
