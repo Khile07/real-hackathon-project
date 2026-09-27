@@ -14,7 +14,6 @@ func kill_someone(body : PhysicsBody2D):
 	
 	if body is player or projectile:
 		if not body is player or not body.yeah_im_THE_player_buddy: 
-			print("killing",body)
 			body.call_deferred("queue_free")
 	
 func _physics_process(delta: float) -> void:

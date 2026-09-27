@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://m7cwatw8w7tl"
+path="res://.godot/imported/gamejam 2026 jumpex.wav-48fd3d070f88aef8c3c20fd2a9671296.sample"
+
+[deps]
+
+source_file="res://imports/import music (MADI ONLY)/gamejam 2026 jumpex.wav"
+dest_files=["res://.godot/imported/gamejam 2026 jumpex.wav-48fd3d070f88aef8c3c20fd2a9671296.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

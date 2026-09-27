@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1xe5v8rv2jd6"
+path="res://.godot/imported/gamejam 2026 goblindie1.wav-cb0fade7de551a19bc48e957354c0e6b.sample"
+
+[deps]
+
+source_file="res://imports/import music (MADI ONLY)/gamejam 2026 goblindie1.wav"
+dest_files=["res://.godot/imported/gamejam 2026 goblindie1.wav-cb0fade7de551a19bc48e957354c0e6b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
