@@ -24,7 +24,6 @@ buses/default_bus_layout="uid://fk3snwau8u1k"
 SignalManager="*uid://cexic3b83e6t8"
 MusicManager="*uid://bvjhiayhw2eff"
 SfxScene="*uid://c7mcw2y10wjfv"
-EndScreen="*uid://mbq6sfditicn"
 
 [display]
 

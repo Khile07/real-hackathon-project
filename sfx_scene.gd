@@ -8,10 +8,13 @@ var goblin_die3_sfx : AudioStreamWAV =preload("uid://cca38kpa30gfi") #3
 var jump : AudioStreamWAV = preload("uid://m7cwatw8w7tl") #4
 var jump2 : AudioStreamWAV = preload("uid://85yki4dkax8a") #5
 var jump3 : AudioStreamWAV = preload("uid://dkwi2yl2lyl1m") #6
+var parry2 : AudioStreamWAV = preload("uid://c6drwkyjb0bqc") #7
+var parry3 : AudioStreamWAV = preload("uid://7ikcfbauygqt") #8
+
 var sfxs = []
 @onready var base_node : AudioStreamPlayer = $AudioStreamPlayer
 func _ready() -> void:
-	sfxs = [arrow_sfx, goblin_die1_sfx, goblin_die2_sfx, goblin_die3_sfx, jump2, jump2, jump3]
+	sfxs = [arrow_sfx, goblin_die1_sfx, goblin_die2_sfx, goblin_die3_sfx, jump2, jump2, jump3, parry2, parry3]
 	SignalManager.sfx_request.connect(play_sfx)
 func play_sfx(sfx_int):
 	var sound : AudioStreamWAV = sfxs[sfx_int]

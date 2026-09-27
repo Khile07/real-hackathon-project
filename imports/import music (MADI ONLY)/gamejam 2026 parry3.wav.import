@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7ikcfbauygqt"
+path="res://.godot/imported/gamejam 2026 parry3.wav-79a4065306c1ee5131095b0aecb1138d.sample"
+
+[deps]
+
+source_file="res://imports/import music (MADI ONLY)/gamejam 2026 parry3.wav"
+dest_files=["res://.godot/imported/gamejam 2026 parry3.wav-79a4065306c1ee5131095b0aecb1138d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

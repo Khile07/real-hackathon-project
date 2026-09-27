@@ -6,6 +6,7 @@ var follow : bool = false
 var the_level : level
 var ending_the_world : bool
 var won : bool = false
+var stop : bool = false
 
 func set_up(L : level):
 	the_level = L
@@ -23,7 +24,8 @@ func kill_someone(body : PhysicsBody2D):
 func _physics_process(delta: float) -> void:
 	if ending_the_world:
 		the_level.fader.modulate.a += delta/2
-		if the_level.fader.modulate.a >= 1 and not won: 
+		if the_level.fader.modulate.a >= 1 and not won and not stop: 
+			stop = true
 			SignalManager.player_dead.emit()
 			get_tree().change_scene_to_file("uid://mbq6sfditicn")
 			
