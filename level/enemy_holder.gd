@@ -14,8 +14,8 @@ var stage_tokens_dict : Dictionary[int, float] = {
 	3 : 60,
 	4 : 120, 
 	5 : 240, 
-	6 : 420,
-	7 : 690
+	6 : 480,
+	7 : 960
 }
 
 const enemy_cost : Dictionary[int, float] = {
