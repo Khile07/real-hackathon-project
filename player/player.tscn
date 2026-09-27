@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dspmmujgd8cfn" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="SpriteFrames" uid="uid://dnpltjvwm0ikv" path="res://player/player_frames.tres" id="2_qjkh3"]
-[ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://c1wtdbpj4326t" path="res://player/shield_holder.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://dgxgiomwygyhv" path="res://player/shield.gd" id="4_yw30f"]
+[ext_resource type="Texture2D" uid="uid://cdmv65ib732si" path="res://danny assets/spritesheets/shield.png" id="5_qjkh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(64, 64)
@@ -297,15 +297,15 @@ collision_mask = 2
 script = ExtResource("4_yw30f")
 
 [node name="shield_sprite" type="Sprite2D" parent="shield_holder/shield" unique_id=1581406638]
-scale = Vector2(1, 0.2)
-texture = ExtResource("2_rkbax")
+position = Vector2(1.2676303e-06, 29)
+texture = ExtResource("5_qjkh3")
 
 [node name="length_timer" type="Timer" parent="shield_holder/shield" unique_id=2019677994]
 wait_time = 0.25
 one_shot = true
 
 [node name="reset_timer" type="Timer" parent="shield_holder/shield" unique_id=2047755755]
-wait_time = 0.5
+wait_time = 0.25
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shield_holder/shield" unique_id=662742618]

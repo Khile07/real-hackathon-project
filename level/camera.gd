@@ -11,11 +11,14 @@ func set_up(L : level):
 	death_zone.body_entered.connect(kill_someone)
 	
 func kill_someone(body : PhysicsBody2D):
-	
 	if body is player or projectile:
 		if not body is player or not body.yeah_im_THE_player_buddy: 
-			body.call_deferred("queue_free")
-	
+			if body is player and body.dead:
+				body.call_deferred("queue_free")
+			if body is balloon_enemy and body.dying:
+				body.call_deferred("queue_free")
+			if body is projectile:
+				body.call_deferred("queue_free")
 func _physics_process(delta: float) -> void:
 	if ending_the_world:
 		the_level.fader.modulate.a += delta/2
@@ -25,3 +28,5 @@ func _physics_process(delta: float) -> void:
 	if position.y <= 360 and the_level.the_player.position.y < position.y: position.y = lerpf(position.y, the_level.the_player.position.y, delta * 4)
 	if position.y  <= 360 - (the_level.current_stage)*720:
 		follow = false
+		the_level.the_enemy_holder.spawn_enemies(the_level.current_stage)
+		SignalManager.wave_started.emit()

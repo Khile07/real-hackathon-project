@@ -1,5 +1,28 @@
 [gd_scene format=3 uid="uid://bvjhiayhw2eff"]
 
-[node name="MusicManager" type="Node2D" unique_id=1284591292]
+[ext_resource type="AudioStream" uid="uid://ch3dvkkfuevim" path="res://imports/import music (MADI ONLY)/gamejam 2026 song BASE.mp3" id="1_bhb8d"]
+[ext_resource type="Script" uid="uid://l4u7ql7q0o0b" path="res://music_manager.gd" id="1_vnq4w"]
+[ext_resource type="AudioStream" uid="uid://ds3bvtfsl2wfn" path="res://imports/import music (MADI ONLY)/gamejam 2026 song WAVE2.mp3" id="2_vnq4w"]
+[ext_resource type="AudioStream" uid="uid://bqdffbatqmbk" path="res://imports/import music (MADI ONLY)/gamejam 2026 song WAVE3.mp3" id="3_0rsql"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=489913976]
+[node name="MusicManager" type="Node2D" unique_id=1284591292]
+process_mode = 3
+script = ExtResource("1_vnq4w")
+
+[node name="base_song_player" type="AudioStreamPlayer" parent="." unique_id=489913976]
+process_mode = 3
+stream = ExtResource("1_bhb8d")
+autoplay = true
+parameters/looping = true
+
+[node name="plus_1_player" type="AudioStreamPlayer" parent="." unique_id=790362243]
+process_mode = 3
+stream = ExtResource("2_vnq4w")
+autoplay = true
+parameters/looping = true
+
+[node name="plus_2_player" type="AudioStreamPlayer" parent="." unique_id=1933291348]
+process_mode = 3
+stream = ExtResource("3_0rsql")
+autoplay = true
+parameters/looping = true

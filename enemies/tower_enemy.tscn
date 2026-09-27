@@ -231,6 +231,7 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_7jxgq")
 
 [node name="Timer" type="Timer" parent="." unique_id=872757783]
+wait_time = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=924703479]
 libraries/ = SubResource("AnimationLibrary_tub0y")
