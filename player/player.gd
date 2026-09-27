@@ -53,6 +53,10 @@ func move_to_stored():
 	the_level.the_tower.set_occupients(self,stored_tile_pos)
 	position = stored_next_pixel_pos
 	tile_pos = stored_tile_pos
+	if tile_pos.y == the_level.the_tower.lowest_y_tile + 2 and the_level.the_enemy_holder.fin and not the_level.the_camera.won:
+		the_level.the_camera.won = true
+		the_level.the_camera.ending_the_world = true
+		the_level.fader.visible = true
 	
 	
 

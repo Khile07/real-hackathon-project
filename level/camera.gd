@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 			
 	if not follow: return
 	if position.y <= 360 and the_level.the_player.position.y < position.y: position.y = lerpf(position.y, the_level.the_player.position.y, delta * 4)
-	if position.y  <= 360 - (the_level.current_stage)*720:
+	if position.y  <= 360 - (the_level.current_stage)*720 - 64:
 		follow = false
 		the_level.the_enemy_holder.spawn_enemies(the_level.current_stage)
 		SignalManager.wave_started.emit()

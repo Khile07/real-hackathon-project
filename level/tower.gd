@@ -19,7 +19,8 @@ func set_up(level_node : level):
 
 func is_move_valid(entity : player, dir : Vector2i) -> bool:
 	var pos : Vector2i = entity.tile_pos + dir
-	if pos.y <= highest_y_tile - 12*(the_level.current_stage + 1): return false
+	if pos.y <= highest_y_tile - 12*(the_level.current_stage + 1) - 1:
+		return false
 
 	if pos in tiles and tiles[pos].tile_type == 0 and tiles[pos].occupient == null:
 		return true

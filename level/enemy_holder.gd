@@ -7,6 +7,7 @@ var tower_peasant_scene : PackedScene
 var proj_balloon_scene : PackedScene
 var goblim_tower_scene : PackedScene
 var the_level : level
+var fin : bool = false
 var stage_tokens_dict : Dictionary[int, float] = {
 	0 : 7,
 	1 : 15,
@@ -39,9 +40,11 @@ func try_progress():
 	if get_child_count() > 1 or the_level.the_camera.follow: return
 	else:
 		if the_level.current_stage == 3:
-			the_level.the_camera.won = true
-			the_level.the_camera.ending_the_world = true
-			the_level.fader.visible = true
+			the_level.the_camera.follow = true
+			fin = true
+			#the_level.the_camera.won = true
+			#the_level.the_camera.ending_the_world = true
+			#the_level.fader.visible = true
 			return
 		the_level.the_camera.follow = true
 		SignalManager.wave_ended.emit()
