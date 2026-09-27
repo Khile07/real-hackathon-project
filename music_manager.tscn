@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bvjhiayhw2eff"]
+
+[node name="MusicManager" type="Node2D" unique_id=1284591292]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=489913976]
