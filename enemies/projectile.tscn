@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://chpu7fcf0q4w"]
+
+[ext_resource type="Script" uid="uid://cf1vnvtkh35i6" path="res://enemies/projectile.gd" id="1_2ejsf"]
+[ext_resource type="Texture2D" uid="uid://cpawtt1pmqo0f" path="res://danny assets/spritesheets/arrow_projectile.png" id="2_1wnp2"]
+[ext_resource type="Texture2D" uid="uid://c773hmqyjp65n" path="res://danny assets/spritesheets/bottle_projectile.png" id="2_ntivs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 7.071068
+
+[node name="projectile" type="CharacterBody2D" unique_id=628418543]
+collision_layer = 6
+collision_mask = 0
+script = ExtResource("1_2ejsf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1021620134]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="bottle" type="Sprite2D" parent="." unique_id=418454271]
+visible = false
+rotation = -0.83775806
+texture = ExtResource("2_ntivs")
+
+[node name="arrow" type="Sprite2D" parent="." unique_id=623878664]
+visible = false
+rotation = -0.7853982
+texture = ExtResource("2_1wnp2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=156887770]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1114493723]
+shape = SubResource("CircleShape2D_g4v7s")

@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamSynchronized" format=3 uid="uid://b8ql7bk5a40qx"]
+
+[ext_resource type="AudioStream" uid="uid://es7kd8bb7sdb" path="res://egg/music/audio/HK2026_STRINGSDEFAULT_WAVE1.mp3" id="1_svk76"]
+[ext_resource type="AudioStream" uid="uid://bki38pmin1g40" path="res://egg/music/audio/HK2026_DRUMS_WAVE3.mp3" id="2_baue4"]
+
+[resource]
+stream_count = 5
+stream_0/stream = ExtResource("1_svk76")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_baue4")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("2_baue4")
+stream_2/volume = 0.0
+stream_3/stream = ExtResource("2_baue4")
+stream_3/volume = 0.0
+stream_4/stream = ExtResource("2_baue4")
+stream_4/volume = 0.0

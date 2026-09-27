@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dj5v2srjbxv37"]
+
+[ext_resource type="Script" uid="uid://cr1b7h7atwcjj" path="res://level/camera.gd" id="1_2n7dp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(4028, 788)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(85, 2372)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(100, 2346)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(4832, 100)
+
+[node name="camera" type="Camera2D" unique_id=1816334831]
+script = ExtResource("1_2n7dp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1198840155]
+position = Vector2(16, 106)
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=136146184]
+position = Vector2(15, 746)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1784658108]
+position = Vector2(1970.5, -784)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" unique_id=1872284001]
+position = Vector2(-1937, -776)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D" unique_id=1526912263]
+position = Vector2(-28, -1951)
+shape = SubResource("RectangleShape2D_d0u6y")

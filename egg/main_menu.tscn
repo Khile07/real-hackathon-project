@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://wwv6bafy3vuq"]
+
+[ext_resource type="Theme" uid="uid://bvhc62njxsxux" path="res://egg/Theme.tres" id="1_uqu0q"]
+[ext_resource type="Script" uid="uid://d2160gfbsips3" path="res://egg/main_menu.gd" id="2_sr3kg"]
+[ext_resource type="Texture2D" uid="uid://cyd8up6p3l481" path="res://egg/placeholder png.png" id="3_okmw0"]
+[ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="4_kaksp"]
+[ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="5_8tp0j"]
+
+[sub_resource type="Gradient" id="Gradient_uqu0q"]
+colors = PackedColorArray(0.003921569, 0.003921569, 0.03529412, 0.7647059, 0.34117648, 0.34901962, 0.47843137, 0.9098039)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b7i24"]
+gradient = SubResource("Gradient_uqu0q")
+fill_from = Vector2(0.5238908, 0)
+fill_to = Vector2(0.48976108, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5p13v"]
+font = ExtResource("4_kaksp")
+font_size = 132
+
+[node name="MainMenu" type="Control" unique_id=2063064166]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_uqu0q")
+script = ExtResource("2_sr3kg")
+
+[node name="BGLayer" type="CanvasLayer" parent="." unique_id=1120586816]
+layer = -2
+
+[node name="Background" type="TextureRect" parent="BGLayer" unique_id=1954536478]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_okmw0")
+
+[node name="GradientPlaceholder" type="TextureRect" parent="BGLayer" unique_id=753916074]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_b7i24")
+
+[node name="TitlePlaceholder" type="Label" parent="BGLayer" unique_id=973464642]
+offset_right = 659.0
+offset_bottom = 79.0
+text = "[Crazy Game Title]"
+label_settings = SubResource("LabelSettings_5p13v")
+
+[node name="MenuPanel" type="Panel" parent="." unique_id=1793815009]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = 152.0
+offset_right = 364.0
+offset_bottom = 632.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPanel" unique_id=230107057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel/MarginContainer" unique_id=1670959768]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" parent="MenuPanel/MarginContainer/VBoxContainer" unique_id=940846161 instance=ExtResource("5_8tp0j")]
+layout_mode = 2
+
+[node name="ExitButton" parent="MenuPanel/MarginContainer/VBoxContainer" unique_id=505014391 instance=ExtResource("5_8tp0j")]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="MenuPanel/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuPanel/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

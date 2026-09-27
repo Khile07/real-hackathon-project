@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb3jwidprh0th"
+path="res://.godot/imported/HK2026_STRINGSDEFAULT_WAVE1.mp3-c30fdfd979bae2ba9337650468460c5e.mp3str"
+
+[deps]
+
+source_file="res://imports/import music (MADI ONLY)/HK2026_STRINGSDEFAULT_WAVE1.mp3"
+dest_files=["res://.godot/imported/HK2026_STRINGSDEFAULT_WAVE1.mp3-c30fdfd979bae2ba9337650468460c5e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

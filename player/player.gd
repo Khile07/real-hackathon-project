@@ -1,0 +1,75 @@
+extends CharacterBody2D
+class_name player
+
+const movement_delay : float = 0.1
+const movement_actions : Dictionary[String, Vector2i] = {
+	"left" : Vector2i(-1,0),
+	"right" : Vector2i(1,0),
+	"down" : Vector2i(0,1),
+	"up" : Vector2i(0,-1)	
+}
+@onready var sprite : AnimatedSprite2D = $sprite
+@onready var anim_player : AnimationPlayer = $AnimationPlayer
+@export var yeah_im_THE_player_buddy : bool
+var stored_next_pixel_pos : Vector2 
+var stored_tile_pos : Vector2i
+var the_level : level
+var tile_pos : Vector2i
+var dead : bool = false
+var death_spin : float = 180
+
+func _ready() -> void:
+	anim_player.animation_finished.connect(finish_anim)
+	anim_player.play("idle")
+	death_spin += randi_range(0,360)
+func _input(event: InputEvent) -> void:
+	if anim_player.current_animation != "idle" or dead: return
+	for action in movement_actions:
+		if event.is_action_pressed(action) and the_level and the_level.the_tower:
+			if the_level.the_tower.is_move_valid(self, movement_actions[action]):
+				try_move_to_tile(movement_actions[action])
+func try_move_to_tile(dir : Vector2i):
+	stored_tile_pos = tile_pos + dir
+	stored_next_pixel_pos = (stored_tile_pos)*64
+	if yeah_im_THE_player_buddy: SignalManager.sfx_request.emit(randi_range(4,6))
+	else:  SignalManager.sfx_request.emit(9)
+	match dir:
+		Vector2i(-1,0):
+			anim_player.play("jump_left")
+		Vector2i(1,0):
+			anim_player.play("jump_right")
+		Vector2i(0,1):
+			anim_player.play("jump_down")
+		Vector2i(0,-1):
+			anim_player.play("jump_up")
+	
+func finish_anim(anim_name : String):
+	if anim_name in ["jump_up","jump_down","jump_left","jump_right"]:
+		move_to_stored()
+		
+func move_to_stored():
+	anim_player.play("idle")
+	anim_player.seek(0)
+	the_level.the_tower.set_occupients(self,stored_tile_pos)
+	position = stored_next_pixel_pos
+	tile_pos = stored_tile_pos
+	
+	
+
+func get_blocked_moves() ->Array[Vector2i]:
+	return [Vector2i(-1,0), Vector2i(1,0), Vector2i(0,1)]
+
+func pushed():
+	the_level.the_tower.tiles[tile_pos].occupient = null
+	dead = true
+	anim_player.stop()
+	if yeah_im_THE_player_buddy:
+		the_level.the_camera.ending_the_world = true
+		the_level.fader.visible = true
+func _physics_process(delta: float) -> void:
+	if not dead: return
+	velocity = Vector2(0,640)
+	sprite.rotation_degrees += death_spin * delta
+	move_and_slide()
+	
+	

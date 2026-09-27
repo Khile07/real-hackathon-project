@@ -1,0 +1,278 @@
+[gd_scene format=3 uid="uid://mbq6sfditicn"]
+
+[ext_resource type="Script" uid="uid://k034dgelit36" path="res://egg/other_thing/end_screen.gd" id="1_r3ha6"]
+[ext_resource type="Texture2D" uid="uid://cyd8up6p3l481" path="res://egg/placeholder png.png" id="2_jcksi"]
+[ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="3_gt3x8"]
+[ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="4_1wll3"]
+[ext_resource type="Theme" uid="uid://plrejvjmy6p5" path="res://win_theme.tres" id="5_t3ycj"]
+
+[sub_resource type="Gradient" id="Gradient_5p13v"]
+offsets = PackedFloat32Array(0, 0.49292454, 0.9834906)
+colors = PackedColorArray(0.061637312, 0.013967899, 0.092648976, 0.7647059, 0.48026556, 0.14219955, 0.0031676772, 0.83622825, 0.8194233, 0.4554507, 0.020390881, 0.9098039)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kff7d"]
+gradient = SubResource("Gradient_5p13v")
+fill_from = Vector2(0.5238908, 0)
+fill_to = Vector2(0.48976108, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rwxr2"]
+font = ExtResource("3_gt3x8")
+font_size = 132
+
+[sub_resource type="Animation" id="Animation_jc4be"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(255, 160)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5p13v"]
+resource_name = "hover"
+length = 0.09
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 0.40612566),
+"update": 0,
+"values": [0.0, 0.0, 0.14660765716752328]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.06666667),
+"transitions": PackedFloat32Array(1, 0.038473178),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.085, 1.085)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 5]
+}
+
+[sub_resource type="Animation" id="Animation_0e87h"]
+resource_name = "win_button"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(255, 160), Vector2(274.29, 184.08)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.08726646259971647]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vbsuj"]
+_data = {
+&"RESET": SubResource("Animation_jc4be"),
+&"hover": SubResource("Animation_5p13v"),
+&"win_button": SubResource("Animation_0e87h")
+}
+
+[node name="win_screen" type="Control" unique_id=1466600029 node_paths=PackedStringArray("anim_player", "anim_player2", "play_button", "exit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r3ha6")
+anim_player = NodePath("MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton/AnimationPlayer2")
+anim_player2 = NodePath("MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton/AnimationPlayer2")
+play_button = NodePath("MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton")
+exit_button = NodePath("MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton")
+
+[node name="WinBG" type="CanvasLayer" parent="." unique_id=248036250]
+layer = -2
+
+[node name="Background" type="TextureRect" parent="WinBG" unique_id=982276512]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jcksi")
+
+[node name="GradientPlaceholder" type="TextureRect" parent="WinBG" unique_id=249367501]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_kff7d")
+
+[node name="TitlePlaceholder" type="Label" parent="WinBG" unique_id=1932642911]
+offset_left = 2.0
+offset_top = 55.0
+offset_right = 1080.0
+offset_bottom = 176.0
+text = "Power Regained."
+label_settings = SubResource("LabelSettings_rwxr2")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=20358360]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 340
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 340
+theme_override_constants/margin_bottom = 37
+
+[node name="WinButtons" type="Panel" parent="MarginContainer" unique_id=73393461]
+layout_mode = 2
+theme = ExtResource("5_t3ycj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/WinButtons" unique_id=879323388]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/WinButtons/MarginContainer" unique_id=2058693262]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer" unique_id=1593202046 instance=ExtResource("4_1wll3")]
+layout_mode = 2
+theme = ExtResource("5_t3ycj")
+theme_override_font_sizes/font_size = 66
+text = "RESTART
+"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton" unique_id=1504952186]
+libraries/ = SubResource("AnimationLibrary_vbsuj")
+
+[node name="ExitButton" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer" unique_id=925928080 instance=ExtResource("4_1wll3")]
+layout_mode = 2
+theme = ExtResource("5_t3ycj")
+text = "EXIT"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton" unique_id=1820971276]
+libraries/ = SubResource("AnimationLibrary_vbsuj")
+
+[connection signal="pressed" from="MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton" to="MarginContainer/WinButtons/MarginContainer/VBoxContainer/PlayButton/AnimationPlayer2" method="play" binds= ["win_button"]]
+[connection signal="pressed" from="MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton" to="MarginContainer/WinButtons/MarginContainer/VBoxContainer/ExitButton/AnimationPlayer2" method="play" binds= ["win_button"]]

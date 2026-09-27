@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cw14j2fkrs51g"]
+
+[ext_resource type="Script" uid="uid://cc5uy240j0tpx" path="res://egg/test_audio.gd" id="1_saidr"]
+[ext_resource type="PackedScene" uid="uid://d3igxons2lmvw" path="res://egg/music/audio_manager.tscn" id="2_t4aac"]
+
+[node name="TestAudio" type="Node2D" unique_id=1478310584]
+script = ExtResource("1_saidr")
+
+[node name="AudioManager" parent="." unique_id=924720978 instance=ExtResource("2_t4aac")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=876421311]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=776178374]
+layout_mode = 2
+text = "Start Wave 1"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=991826257]
+layout_mode = 2
+text = "Stop Wave 1"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=904830997]
+layout_mode = 2
+text = "Start Wave 3"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=795545567]
+layout_mode = 2
+text = "Stop Wave 3"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

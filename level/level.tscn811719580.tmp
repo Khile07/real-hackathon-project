@@ -1,0 +1,25 @@
+[gd_scene format=4 uid="uid://b2tsoukkog167"]
+
+[ext_resource type="Script" uid="uid://bj2x0l75fgc1l" path="res://level/level.gd" id="1_5gx2l"]
+[ext_resource type="TileSet" uid="uid://w2iws436dc67" path="res://level/placeholder_set.tres" id="1_7lnir"]
+[ext_resource type="Script" uid="uid://cg7mcj3vj718b" path="res://level/tower.gd" id="2_qohg2"]
+[ext_resource type="Script" uid="uid://cwcxxgoyka0o5" path="res://level/enemy_holder.gd" id="4_vkbyq"]
+
+[node name="level" type="Node2D" unique_id=2061506222]
+script = ExtResource("1_5gx2l")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=516912202]
+position = Vector2(540, 360)
+
+[node name="tower" type="Node2D" parent="." unique_id=1135071816]
+position = Vector2(412, 720)
+script = ExtResource("2_qohg2")
+
+[node name="tiles" type="TileMapLayer" parent="tower" unique_id=1720508429]
+modulate = Color(1, 1, 1, 0.48235294)
+position = Vector2(-412, -720)
+tile_map_data = PackedByteArray("AAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAA=")
+tile_set = ExtResource("1_7lnir")
+
+[node name="enemy_holder" type="Node2D" parent="." unique_id=1361831581]
+script = ExtResource("4_vkbyq")

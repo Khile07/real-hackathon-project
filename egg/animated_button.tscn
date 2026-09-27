@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://b6umvr7gvamsl"]
+
+[ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="1_88ti0"]
+[ext_resource type="AudioStream" uid="uid://1xr5xqwatr1b" path="res://imports/import music (MADI ONLY)/gamejam 2026 buttonhover.wav" id="3_3018w"]
+
+[sub_resource type="Animation" id="Animation_jc4be"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(255, 160)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5p13v"]
+resource_name = "hover"
+length = 0.09
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 0.40612566),
+"update": 0,
+"values": [0.0, 0.0, 0.14660765716752328]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.06666667),
+"transitions": PackedFloat32Array(1, 0.038473178),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.085, 1.085)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 5]
+}
+
+[sub_resource type="Animation" id="Animation_0e87h"]
+resource_name = "win_button"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(255, 160), Vector2(274.29, 184.08)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.08726646259971647]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b7i24"]
+_data = {
+&"RESET": SubResource("Animation_jc4be"),
+&"hover": SubResource("Animation_5p13v"),
+&"win_button": SubResource("Animation_0e87h")
+}
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_57qmd"]
+stream_count = 1
+stream_0/stream = ExtResource("3_3018w")
+stream_0/volume = 12.0
+
+[node name="PlayButton" type="Button" unique_id=940846161]
+custom_minimum_size = Vector2(255, 160)
+offset_right = 255.0
+offset_bottom = 160.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+offset_transform_enabled = true
+mouse_force_pass_scroll_events = false
+theme_override_colors/font_color = Color(0.9272533, 0.94303626, 0.9910087, 1)
+theme_override_colors/font_pressed_color = Color(0.26973963, 0.283161, 0.46749228, 1)
+theme_override_fonts/font = ExtResource("1_88ti0")
+theme_override_font_sizes/font_size = 116
+text = "PLAY
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=767701573]
+libraries/ = SubResource("AnimationLibrary_b7i24")
+
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1010920857]
+stream = SubResource("AudioStreamSynchronized_57qmd")
+volume_db = 5.0
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=326722063]
+stream = SubResource("AudioStreamSynchronized_57qmd")
+volume_db = 5.0
+pitch_scale = 0.24
+
+[connection signal="mouse_entered" from="." to="ButtonHover" method="play"]
+[connection signal="mouse_entered" from="." to="AnimationPlayer" method="play" binds= ["hover"]]
+[connection signal="mouse_exited" from="." to="AnimationPlayer" method="play_backwards" binds= ["hover"]]
+[connection signal="pressed" from="." to="ButtonClick" method="play"]
