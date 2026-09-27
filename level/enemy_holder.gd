@@ -8,10 +8,10 @@ var proj_balloon_scene : PackedScene
 var goblim_tower_scene : PackedScene
 var the_level : level
 var stage_tokens_dict : Dictionary[int, float] = {
-	0 : 5,
+	0 : 7,
 	1 : 15,
-	2 : 30,
-	3 : 60,
+	2 : 20,
+	3 : 45,
 	4 : 120, 
 	5 : 240, 
 	6 : 480,
@@ -19,9 +19,9 @@ var stage_tokens_dict : Dictionary[int, float] = {
 }
 
 const enemy_cost : Dictionary[int, float] = {
-	0 : 2,
-	1 : 5,
-	2 : 8
+	0 : 1,
+	1 : 7,
+	2 : 5
 }
 
 func set_up(level_node : level):
@@ -38,12 +38,10 @@ func try_progress():
 			if the_level.the_player.position.distance_to(child.position) > 2000: child.queue_free()
 	if get_child_count() > 1 or the_level.the_camera.follow: return
 	else:
-		if the_level.current_stage == 1:
+		if the_level.current_stage == 4:
 			the_level.the_camera.won = true
 			the_level.the_camera.ending_the_world = true
 			the_level.fader.visible = true
-			
-			print(the_level.fader.visible)
 			return
 		the_level.the_camera.follow = true
 		SignalManager.wave_ended.emit()

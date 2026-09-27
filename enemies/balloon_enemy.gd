@@ -53,13 +53,11 @@ func die_start():
 	anim_player.play("death")
 	SignalManager.sfx_request.emit(randi_range(1,3))
 	dying = true
-	print("DYINGG")
 	
 func fall():
 	rotation_degrees += randi_range(-60,60)
 	anim_player.play("falling")
 	falling = true
 	velocity = Vector2(0,400)
-	print("FALLOING")
 	
 	

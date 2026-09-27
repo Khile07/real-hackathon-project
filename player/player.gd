@@ -31,7 +31,8 @@ func _input(event: InputEvent) -> void:
 func try_move_to_tile(dir : Vector2i):
 	stored_tile_pos = tile_pos + dir
 	stored_next_pixel_pos = (stored_tile_pos)*64
-	SignalManager.sfx_request.emit(randi_range(4,6))
+	if yeah_im_THE_player_buddy: SignalManager.sfx_request.emit(randi_range(4,6))
+	else:  SignalManager.sfx_request.emit(9)
 	match dir:
 		Vector2i(-1,0):
 			anim_player.play("jump_left")

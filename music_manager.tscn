@@ -12,32 +12,20 @@ script = ExtResource("1_vnq4w")
 [node name="base_song_player" type="AudioStreamPlayer" parent="." unique_id=489913976]
 process_mode = 3
 stream = ExtResource("1_bhb8d")
-<<<<<<< Updated upstream
 volume_db = -3.0
-=======
-volume_db = -6.0
->>>>>>> Stashed changes
 autoplay = true
 parameters/looping = true
 
 [node name="plus_1_player" type="AudioStreamPlayer" parent="." unique_id=790362243]
 process_mode = 3
 stream = ExtResource("2_vnq4w")
-<<<<<<< Updated upstream
 volume_db = -3.0
-=======
-volume_db = -6.0
->>>>>>> Stashed changes
 autoplay = true
 parameters/looping = true
 
 [node name="plus_2_player" type="AudioStreamPlayer" parent="." unique_id=1933291348]
 process_mode = 3
 stream = ExtResource("3_0rsql")
-<<<<<<< Updated upstream
 volume_db = -3.0
-=======
-volume_db = -6.0
->>>>>>> Stashed changes
 autoplay = true
 parameters/looping = true
