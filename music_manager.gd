@@ -33,7 +33,7 @@ func fade_in(tracks : Array[int] = []):
 
 func _process(delta: float) -> void:
 	for track : AudioStreamPlayer in fading_out_tracks:
-		if track.volume_db > -80: track.volume_db -= delta * 160
+		if track.volume_db > -80: track.volume_db -= delta * 60
 	for track : AudioStreamPlayer in fading_in_tracks:
-		if track.volume_db < 0: track.volume_db += delta * 160
+		if track.volume_db < -3: track.volume_db += delta * 60
 		
