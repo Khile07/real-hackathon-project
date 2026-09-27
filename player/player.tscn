@@ -268,7 +268,6 @@ _data = {
 size = Vector2(64, 12)
 
 [node name="player" type="CharacterBody2D" unique_id=2041007088]
-collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_oul6g")
 

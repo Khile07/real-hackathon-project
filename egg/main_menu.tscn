@@ -78,12 +78,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PlayButton" parent="MenuPanel/MarginContainer/VBoxContainer" unique_id=940846161 instance=ExtResource("5_8tp0j")]
 layout_mode = 2
-script = null
 
 [node name="ExitButton" parent="MenuPanel/MarginContainer/VBoxContainer" unique_id=505014391 instance=ExtResource("5_8tp0j")]
 layout_mode = 2
 text = "EXIT"
-script = null
 
 [connection signal="pressed" from="MenuPanel/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuPanel/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

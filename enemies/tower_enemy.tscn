@@ -56,7 +56,6 @@ _data = {
 }
 
 [node name="peasant" type="CharacterBody2D" unique_id=1725091172]
-collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_yj1n7")
 

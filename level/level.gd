@@ -3,12 +3,16 @@ class_name level
 
 @onready var player_scene : PackedScene = preload("uid://dquppdafdkibw")
 @onready var the_tower : tower = $tower
+@onready var the_camera : custom_cam = $camera
 @onready var the_enemy_holder : enemy_holder = $enemy_holder
 var the_player : player
+
+var current_stage = 0
 
 func _ready() -> void:
 	the_tower.set_up(self)
 	the_enemy_holder.set_up(self)
+	the_camera.set_up(self)
 	the_player = set_up_tower_entity(player_scene, Vector2i(8,10), true)
 	the_tower.the_player = the_player
 	#the_player.position = Vector2(200,200)

@@ -6,7 +6,9 @@ class_name tower
 
 var tiles : Dictionary[Vector2i, tile_resource]
 var furthest_x_tile = 1
-var highest_y_tile = 1
+var min_x = 100
+var highest_y_tile = -1000
+var lowest_y_tile = 1000
 
 var the_player : player
 var the_level : level
@@ -15,15 +17,16 @@ func set_up(level_node : level):
 	the_level = level_node
 	create_tiles()
 
-func is_move_valid(dir : Vector2i) -> bool:
-	#print(tiles)
-	var pos : Vector2i = the_player.tile_pos + dir
+func is_move_valid(entity : player, dir : Vector2i) -> bool:
+	var pos : Vector2i = entity.tile_pos + dir
 	if pos in tiles and tiles[pos].tile_type == 0 and tiles[pos].occupient == null:
 		return true
-	elif tiles[pos].occupient is player and not dir in tiles[pos].occupient.get_blocked_moves():
+	elif pos in tiles and tiles[pos].tile_type == 0 and tiles[pos].occupient is player and not dir in tiles[pos].occupient.get_blocked_moves():
 		return true
-	print("f")
+	print(pos in tiles, tiles[pos].tile_type == 0, tiles[pos].occupient == null)
 	return false
+		
+func set_stage_blocks():pass
 		
 func set_occupients(occ : player, pos : Vector2i):
 	tiles[occ.tile_pos].occupient = null
@@ -38,11 +41,15 @@ func create_tiles():
 		tile.occupient = null
 		tile.tile_position = cell
 		tiles[cell] = tile
-		if cell.y > highest_y_tile: highest_y_tile = cell.y
-		if cell.x > furthest_x_tile: furthest_x_tile = cell.x
+		min_x = min(cell.x, min_x)
+		lowest_y_tile = min(lowest_y_tile,cell.y)
+		highest_y_tile = max(highest_y_tile, cell.y)
+		furthest_x_tile = max(furthest_x_tile, cell.x)
 	furthest_x_tile += 1
 	highest_y_tile += 1
-	for i in range(0,highest_y_tile):
+	lowest_y_tile -=1
+	print("HIGH", highest_y_tile)
+	for i in range(lowest_y_tile,highest_y_tile):
 		var tile_a : tile_resource = tile_resource.new()
 		tile_a.tile_type = 1
 		tile_a.occupient = null
@@ -59,12 +66,13 @@ func create_tiles():
 		var tile_a : tile_resource = tile_resource.new()
 		tile_a.tile_type = 1
 		tile_a.occupient = null
-		tile_a.tile_position = Vector2i(i,-1)
+		tile_a.tile_position = Vector2i(i,lowest_y_tile)
 		
 		var tile_b : tile_resource = tile_resource.new()
 		tile_b.tile_type = 1
 		tile_b.occupient = null
 		tile_b.tile_position = Vector2i(i,highest_y_tile )
 		
-		tiles[Vector2i(i,-1)] = tile_a
+		tiles[Vector2i(i,lowest_y_tile)] = tile_a
 		tiles[Vector2i(i,highest_y_tile )] = tile_b
+	print(min_x, "MIN X")

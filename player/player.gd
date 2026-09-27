@@ -27,7 +27,7 @@ func _input(event: InputEvent) -> void:
 	if anim_player.current_animation != "idle" or dead: return
 	for action in movement_actions:
 		if event.is_action_pressed(action) and the_level and the_level.the_tower:
-			if the_level.the_tower.is_move_valid(movement_actions[action]):
+			if the_level.the_tower.is_move_valid(self, movement_actions[action]):
 				try_move_to_tile(movement_actions[action])
 func try_move_to_tile(dir : Vector2i):
 	stored_tile_pos = tile_pos + dir
