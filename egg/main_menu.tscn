@@ -6,11 +6,11 @@
 [ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="4_kaksp"]
 [ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="5_8tp0j"]
 
-[sub_resource type="Gradient" id="Gradient_5p13v"]
+[sub_resource type="Gradient" id="Gradient_uqu0q"]
 colors = PackedColorArray(0.003921569, 0.003921569, 0.03529412, 0.7647059, 0.34117648, 0.34901962, 0.47843137, 0.9098039)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_b7i24"]
-gradient = SubResource("Gradient_5p13v")
+gradient = SubResource("Gradient_uqu0q")
 fill_from = Vector2(0.5238908, 0)
 fill_to = Vector2(0.48976108, 1)
 
