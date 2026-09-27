@@ -1,69 +1,9 @@
 [gd_scene format=3 uid="uid://ywwdm5c3pym0"]
 
 [ext_resource type="Script" uid="uid://vv6yuyk13pok" path="res://egg/pause_menu.gd" id="1_8pgpu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hnap"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 4
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 6
-border_color = Color(0.72156864, 0.73333335, 0.81960785, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-corner_detail = 5
-shadow_color = Color(0.21179518, 0.18829608, 0.34896678, 1)
-shadow_size = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnv02"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 4
-border_color = Color(0.78039217, 0.79607844, 0.8784314, 0.9019608)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0)
-shadow_size = 1
-shadow_offset = Vector2(-1, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pgpu"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_top = 4
-border_width_right = 8
-border_color = Color(0.018174412, 0.017159928, 0.0437835, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-corner_detail = 5
-shadow_color = Color(0.052982464, 0.06385211, 0.118406944, 0.8745098)
-shadow_size = 1
-shadow_offset = Vector2(-1, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yl3sp"]
-bg_color = Color(0.16380861, 0.14342791, 0.27876958, 1)
-border_width_left = 4
-border_width_bottom = 8
-border_color = Color(0.023503022, 0.030865561, 0.0908541, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-corner_detail = 20
-expand_margin_top = 4.0
-expand_margin_bottom = 4.0
-
-[sub_resource type="Theme" id="Theme_bfd55"]
-Button/styles/hover = SubResource("StyleBoxFlat_8hnap")
-Button/styles/normal = SubResource("StyleBoxFlat_xnv02")
-Button/styles/pressed = SubResource("StyleBoxFlat_8pgpu")
-Panel/styles/panel = SubResource("StyleBoxFlat_yl3sp")
+[ext_resource type="Theme" uid="uid://bvhc62njxsxux" path="res://egg/Theme.tres" id="2_bfd55"]
+[ext_resource type="AudioStream" uid="uid://1xr5xqwatr1b" path="res://imports/import music (MADI ONLY)/gamejam 2026 buttonhover.wav" id="3_jgkdw"]
+[ext_resource type="PackedScene" uid="uid://b6umvr7gvamsl" path="res://egg/animated_button.tscn" id="4_o0co7"]
 
 [sub_resource type="Gradient" id="Gradient_5p13v"]
 colors = PackedColorArray(0.003921569, 0.003921569, 0.03529412, 0.7647059, 0.34117648, 0.34901962, 0.47843137, 0.9098039)
@@ -73,26 +13,86 @@ gradient = SubResource("Gradient_5p13v")
 fill_from = Vector2(0.5238908, 0)
 fill_to = Vector2(0.48976108, 1)
 
-[node name="PauseMenu" type="Control" unique_id=2063064166]
+[node name="PauseMenu" type="CanvasLayer" unique_id=930071595]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-mouse_filter = 1
-theme = SubResource("Theme_bfd55")
 script = ExtResource("1_8pgpu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=2046971941]
+process_mode = 4
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GradientPlaceholder" type="TextureRect" parent="Panel" unique_id=1944657023]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_b7i24")
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuPanel2" type="Panel" parent="." unique_id=2046576299]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.5
+offset_top = -240.0
+offset_right = 168.5
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bfd55")
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPanel2" unique_id=2055938359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel2/MarginContainer" unique_id=2116307878]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" parent="MenuPanel2/MarginContainer/VBoxContainer" unique_id=940846161 instance=ExtResource("4_o0co7")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 66
+text = "RESTART
+"
+
+[node name="ExitButton" parent="MenuPanel2/MarginContainer/VBoxContainer" unique_id=2049772261 instance=ExtResource("4_o0co7")]
+layout_mode = 2
+text = "EXIT"
 
 [node name="MenuPanel" type="Panel" parent="." unique_id=1793815009]
 process_mode = 3
-visibility_layer = 1023
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 993.0
-offset_top = 25.0
-offset_right = 1051.0
-offset_bottom = 80.0
-grow_vertical = 2
+z_index = 26
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_top = 23.0
+offset_right = -20.0
+offset_bottom = 78.0
+grow_horizontal = 0
+theme = ExtResource("2_bfd55")
 
 [node name="MarginContainer" type="MarginContainer" parent="MenuPanel" unique_id=683458278]
 layout_mode = 1
@@ -110,20 +110,15 @@ theme_override_colors/font_color = Color(0.9254902, 0.9411765, 0.99215686, 1)
 theme_override_colors/font_pressed_color = Color(0.27058825, 0.28235295, 0.46666667, 1)
 text = "❚❚"
 
-[node name="BGLayer" type="CanvasLayer" parent="." unique_id=1031165409]
-process_mode = 4
-physics_interpolation_mode = 2
-layer = 0
-visible = false
-follow_viewport_enabled = true
+[node name="ButtonHoverSFX" type="AudioStreamPlayer" parent="MenuPanel/MarginContainer/Button" unique_id=62222876]
+stream = ExtResource("3_jgkdw")
 
-[node name="GradientPlaceholder" type="TextureRect" parent="BGLayer" unique_id=1944657023]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("GradientTexture2D_b7i24")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MenuPanel/MarginContainer/Button" unique_id=1864513456]
+stream = ExtResource("3_jgkdw")
+pitch_scale = 0.09
 
+[connection signal="pressed" from="MenuPanel2/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuPanel2/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="button_down" from="MenuPanel/MarginContainer/Button" to="MenuPanel/MarginContainer/Button/AudioStreamPlayer" method="play"]
+[connection signal="mouse_entered" from="MenuPanel/MarginContainer/Button" to="MenuPanel/MarginContainer/Button/ButtonHoverSFX" method="play"]
 [connection signal="pressed" from="MenuPanel/MarginContainer/Button" to="." method="_on_button_pressed"]

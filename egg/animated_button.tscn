@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6umvr7gvamsl"]
 
 [ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="1_88ti0"]
+[ext_resource type="AudioStream" uid="uid://1xr5xqwatr1b" path="res://imports/import music (MADI ONLY)/gamejam 2026 buttonhover.wav" id="3_3018w"]
 
 [sub_resource type="Animation" id="Animation_jc4be"]
 length = 0.001
@@ -87,8 +88,15 @@ _data = {
 &"hover": SubResource("Animation_5p13v")
 }
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_57qmd"]
+stream_count = 1
+stream_0/stream = ExtResource("3_3018w")
+stream_0/volume = 0.0
+
 [node name="PlayButton" type="Button" unique_id=940846161]
 custom_minimum_size = Vector2(255, 160)
+offset_right = 255.0
+offset_bottom = 160.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 offset_transform_enabled = true
@@ -103,5 +111,16 @@ text = "PLAY
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=767701573]
 libraries/ = SubResource("AnimationLibrary_b7i24")
 
+[node name="ButtonHover" type="AudioStreamPlayer" parent="." unique_id=1010920857]
+stream = SubResource("AudioStreamSynchronized_57qmd")
+volume_db = 5.0
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=326722063]
+stream = SubResource("AudioStreamSynchronized_57qmd")
+volume_db = 5.0
+pitch_scale = 0.24
+
+[connection signal="mouse_entered" from="." to="ButtonHover" method="play"]
 [connection signal="mouse_entered" from="." to="AnimationPlayer" method="play" binds= ["hover"]]
 [connection signal="mouse_exited" from="." to="AnimationPlayer" method="play_backwards" binds= ["hover"]]
+[connection signal="pressed" from="." to="ButtonClick" method="play"]
