@@ -23,7 +23,6 @@ func set_up(L : level) -> void:
 
 func _physics_process(delta: float) -> void:
 	if dying: 
-		rotation_degrees += delta * 360
 		move_and_slide()
 		return
 	velocity.y = sin(floater) *128
@@ -51,6 +50,7 @@ func die_start():
 	print("DYINGG")
 	
 func fall():
+	rotation_degrees += randi_range(-60,60)
 	anim_player.play("falling")
 	falling = true
 	velocity = Vector2(0,400)

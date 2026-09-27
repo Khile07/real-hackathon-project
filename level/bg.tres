@@ -1,6 +1,19 @@
 [gd_resource type="TileSet" format=3 uid="uid://cujocsf6jf67c"]
 
 [ext_resource type="Texture2D" uid="uid://cxwv66xarx4yl" path="res://danny assets/spritesheets/background.png" id="1_430bn"]
+[ext_resource type="Texture2D" uid="uid://dhewq64bnl37a" path="res://danny assets/spritesheets/stars.png" id="1_hteg7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6p75j"]
+texture = ExtResource("1_hteg7")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_430bn"]
 texture = ExtResource("1_430bn")
@@ -16,3 +29,4 @@ texture_region_size = Vector2i(64, 64)
 [resource]
 tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_430bn")
+sources/0 = SubResource("TileSetAtlasSource_6p75j")
