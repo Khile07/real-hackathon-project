@@ -7,6 +7,11 @@ var win: bool = false
 func _ready() -> void:
 	SignalManager.player_dead.connect(_player_dead)
 	SignalManager.player_won.connect(_player_won)
+	
+
+func _exit_tree() -> void:
+	SignalManager.player_dead.disconnect(_player_dead)
+	SignalManager.player_won.disconnect(_player_won)
 
 func _player_dead() -> void:
 	$LoseBG.visible = true

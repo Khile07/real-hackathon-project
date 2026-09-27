@@ -51,7 +51,6 @@ tile_set = ExtResource("6_44x8d")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=518870483]
 process_mode = 3
 layer = 70
-visible = false
 follow_viewport_enabled = true
 
 [node name="fader" type="ColorRect" parent="CanvasLayer" unique_id=1515019095]
