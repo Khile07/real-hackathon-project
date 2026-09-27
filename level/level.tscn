@@ -14,6 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://bxsm3xwp7p534" path="res://D_icon.png" id="11_l5lfc"]
 [ext_resource type="FontFile" uid="uid://dtc2jj4iwa3of" path="res://egg/ThaleahFat/ThaleahFat.ttf" id="13_m3nah"]
 
+[sub_resource type="Gradient" id="Gradient_l5lfc"]
+offsets = PackedFloat32Array(0, 0.04255319, 0.2618658, 0.5335516, 0.63666123, 0.9525368, 0.9983633)
+colors = PackedColorArray(0, 0, 0, 0.654902, 0.03818085, 0.05576262, 0.17489964, 0.6039216, 0, 0.09411765, 0.09803922, 0.15686275, 0, 0.34509805, 0.3529412, 0, 0, 0.14117648, 0.14509805, 0.15686275, 0.03137255, 0.047058824, 0.15686275, 0.59607846, 0, 0, 0, 0.6313726)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g4v7s"]
+gradient = SubResource("Gradient_l5lfc")
+
 [node name="level" type="Node2D" unique_id=2061506222]
 script = ExtResource("1_5gx2l")
 
@@ -107,3 +114,8 @@ offset_bottom = 713.0
 theme_override_fonts/font = ExtResource("13_m3nah")
 theme_override_font_sizes/font_size = 64
 text = "Parry"
+
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=547794335]
+position = Vector2(513, -792.4999)
+scale = Vector2(4.0312495, 48.79688)
+texture = SubResource("GradientTexture2D_g4v7s")
