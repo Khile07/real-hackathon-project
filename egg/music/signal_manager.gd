@@ -16,5 +16,5 @@ signal menu_button_pressed()
 signal pause_open
 signal pause_close
 
-
 # Highkey, I'm only making this so that the audio tracks are easy to work out.... hopefully.
+signal sfx_request(sfx_int)

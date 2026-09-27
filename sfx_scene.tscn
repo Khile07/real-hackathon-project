@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c7mcw2y10wjfv"]
+
+[ext_resource type="Script" uid="uid://dcgx0skpbbaht" path="res://sfx_scene.gd" id="1_doh5w"]
+
+[node name="SfxScene" type="Node2D" unique_id=77004798]
+script = ExtResource("1_doh5w")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=851241836]

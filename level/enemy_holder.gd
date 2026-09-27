@@ -31,8 +31,13 @@ func set_up(level_node : level):
 	spawn_enemies(0)
 	
 func try_progress():
+	for child in get_children():
+		if child is not Timer and child is Node2D:
+			if the_level.the_player.position.distance_to(child.position) > 2000: child.queue_free()
 	if get_child_count() > 1 or the_level.the_camera.follow: return
 	else:
+		if the_level.current_stage == 7:
+			the_level.the_camera.ending_the_world = true
 		the_level.the_camera.follow = true
 		SignalManager.wave_ended.emit()
 		the_level.current_stage += 1

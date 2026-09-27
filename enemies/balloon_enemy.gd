@@ -46,10 +46,12 @@ func try_attack():
 	if randf() > 0.5:
 		proj.move_type = 1
 		proj.speed *= 1.5
+	SignalManager.sfx_request.emit(0)
 	proj.start(the_level.the_player, self)
 	
 func die_start():
 	anim_player.play("death")
+	SignalManager.sfx_request.emit(randi_range(1,3))
 	dying = true
 	print("DYINGG")
 	
