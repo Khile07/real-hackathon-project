@@ -1,30 +1,153 @@
 [gd_scene format=3 uid="uid://ix4fvtcg36jb"]
 
 [ext_resource type="Script" uid="uid://crs6yk82ejafs" path="res://enemies/tower_enemy.gd" id="1_yj1n7"]
-[ext_resource type="Texture2D" uid="uid://ee8ous6e1mf1" path="res://player/placeholder_player_sprite.png" id="2_7mtco"]
+[ext_resource type="Texture2D" uid="uid://qo3has0veplq" path="res://danny assets/spritesheets/gob-Sheet.png" id="2_7mtco"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7mtco"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jxgq"]
 atlas = ExtResource("2_7mtco")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tub0y"]
+atlas = ExtResource("2_7mtco")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vecpb"]
+atlas = ExtResource("2_7mtco")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utidi"]
+atlas = ExtResource("2_7mtco")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfjju"]
+atlas = ExtResource("2_7mtco")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kof51"]
+atlas = ExtResource("2_7mtco")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1i2j"]
+atlas = ExtResource("2_7mtco")
+region = Rect2(960, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yj1n7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7mtco")
+"texture": SubResource("AtlasTexture_7jxgq")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tub0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vecpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utidi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfjju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kof51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1i2j")
+}],
+"loop": 1,
+"name": &"jump_up",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jxgq"]
 size = Vector2(64, 64)
 
+[sub_resource type="Animation" id="Animation_7mtco"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_yj1n7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_rkbax"]
 resource_name = "idle"
+length = 0.10001000149026514
 loop_mode = 1
 step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_yj1n7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_yw30f"]
 resource_name = "jump_down"
@@ -43,11 +166,48 @@ step = 0.041666668
 
 [sub_resource type="Animation" id="Animation_g1dw6"]
 resource_name = "jump_up"
-length = 0.16667083830051124
+length = 0.2500041741173714
 step = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_yj1n7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump_up"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tub0y"]
 _data = {
+&"RESET": SubResource("Animation_7mtco"),
 &"idle": SubResource("Animation_rkbax"),
 &"jump_down": SubResource("Animation_yw30f"),
 &"jump_left": SubResource("Animation_qjkh3"),
@@ -60,9 +220,9 @@ collision_mask = 0
 script = ExtResource("1_yj1n7")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=244584912]
-modulate = Color(1, 0.39173245, 0.6076062, 1)
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_yj1n7")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343884453]
 visible = false
