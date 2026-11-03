@@ -16,12 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://g8quahnc5t47" path="res://danny assets/spritesheets/clouds.png" id="14_m3nah"]
 [ext_resource type="Script" uid="uid://bxyihsreklqxr" path="res://level/clouds.gd" id="15_fm1jd"]
 
-[sub_resource type="Gradient" id="Gradient_l5lfc"]
+[sub_resource type="Gradient" id="Gradient_fm1jd"]
 offsets = PackedFloat32Array(0, 0.04255319, 0.2618658, 0.5335516, 0.63666123, 0.9525368, 0.9983633)
 colors = PackedColorArray(0, 0, 0, 0.654902, 0.03818085, 0.05576262, 0.17489964, 0.6039216, 0, 0.09411765, 0.09803922, 0.15686275, 0, 0.34509805, 0.3529412, 0, 0, 0.14117648, 0.14509805, 0.15686275, 0.03137255, 0.047058824, 0.15686275, 0.59607846, 0, 0, 0, 0.6313726)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_g4v7s"]
-gradient = SubResource("Gradient_l5lfc")
+gradient = SubResource("Gradient_fm1jd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fm1jd"]
 texture = ExtResource("14_m3nah")
@@ -115,6 +115,7 @@ offset_bottom = 714.0
 theme_override_fonts/font = ExtResource("13_m3nah")
 theme_override_font_sizes/font_size = 64
 text = "MOVE"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Node" unique_id=2047866286]
 offset_left = 815.0
@@ -124,6 +125,7 @@ offset_bottom = 713.0
 theme_override_fonts/font = ExtResource("13_m3nah")
 theme_override_font_sizes/font_size = 64
 text = "Parry"
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="Sprite2D" parent="." unique_id=547794335]
 position = Vector2(513, -792.4999)
